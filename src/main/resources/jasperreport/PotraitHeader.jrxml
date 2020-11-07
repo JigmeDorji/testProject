@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.1.1.final using JasperReports Library version 6.1.1  -->
+<!-- 2017-04-12T10:14:17 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PotraitHeader" pageWidth="595" pageHeight="716" columnWidth="487" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="3c7abf73-2d6b-4ef8-bfdc-aa765bc4ccc0">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="RDOREPORTNUMBER" class="java.lang.String">
+		<defaultValueExpression><![CDATA[$P{RDOREPORTNUMBER}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="BRANCH_CODE" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+		<defaultValueExpression><![CDATA[$P{BRANCH_CODE}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="BRANCHSHORTNAME" class="java.lang.String"/>
+	<parameter name="BRANCHFULLNAME" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+A.RDOSCREENID,
+A.RDOISDISPLAYFULLORGNAME,
+A.RDOREPORTNAME,
+B.BICBRANCHNAME,
+B.BICBRANCHCODE,
+B.BICBRANCHADDRESS
+FROM
+SA_REPORTDISPLAYOPTION A, SA_BRANCHINFOANDCONFIG B
+WHERE
+A.RDOREPORTNUMBER=$P{RDOREPORTNUMBER}]]>
+	</queryString>
+	<field name="RDOSCREENID" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="RDOISDISPLAYFULLORGNAME" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="RDOREPORTNAME" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="BICBRANCHNAME" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="BICBRANCHCODE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="BICBRANCHADDRESS" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="102" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="91" y="21" width="369" height="15" uuid="40286849-06fc-43f1-8615-2464daed3080">
+					<property name="local_measure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{RDOISDISPLAYFULLORGNAME} == true ? $P{BRANCHFULLNAME} : $P{BRANCHSHORTNAME}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="91" y="36" width="369" height="14" uuid="183e64c7-987d-45e3-94d5-b28518072fce">
+					<property name="local_measure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($P{BRANCH_CODE} == null || $P{BRANCH_CODE}.isEmpty() == true) ?"BRANCH NAME":$F{BICBRANCHNAME}+" ( "+$F{BICBRANCHCODE}+" ) "]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="141" y="50" width="268" height="28" uuid="5f5a62f3-7112-4f36-8da3-42d52b67ee3b">
+					<property name="local_measure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{BICBRANCHADDRESS}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="91" y="79" width="369" height="14" uuid="1b67519b-adb9-4e75-8ec1-024dfab10aa0">
+					<property name="local_measure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{RDOREPORTNAME}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="13" y="21" width="72" height="70" uuid="e02f996a-d0a7-4d15-ba4a-9bfe9291b202"/>
+				<imageExpression><![CDATA["logo_client.png"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="0" y="97" width="537" height="1" uuid="cdb4b122-868e-4456-aeca-d504a857a24d">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+			</line>
+			<image>
+				<reportElement x="465" y="20" width="72" height="70" uuid="a2869015-2b4d-45bd-8a2a-eab9e6d9d826"/>
+				<imageExpression><![CDATA["prpduct_logo.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+</jasperReport>

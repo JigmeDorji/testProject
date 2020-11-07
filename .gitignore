@@ -1,0 +1,14 @@
+#Local files
+/.idea
+
+# production
+/target
+
+# Database Connection
+/src/main/webapp/WEB-INF/configuration/connection-string.xml
+
+# Database Connection Jasper Report
+/src/main/java/com/dhi/ttpl/integration/jasper/report/util/SQLServerConnectionUtils.java
+
+#files
+/fileupload/

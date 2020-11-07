@@ -1,0 +1,68 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                            http://www.springframework.org/schema/beans/spring-beans.xsd
+                            http://www.springframework.org/schema/context
+                            http://www.springframework.org/schema/context/spring-context.xsd
+                            http://www.springframework.org/schema/mvc
+                            http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <context:annotation-config/>
+    <mvc:annotation-driven/>
+    <mvc:default-servlet-handler/>
+
+    <context:component-scan base-package="com.test.srv"/>
+
+    <mvc:interceptors>
+        <bean class="org.springframework.web.servlet.mvc.WebContentInterceptor">
+            <property name="cacheSeconds" value="0"/>
+            <property name="useExpiresHeader" value="true"/>
+            <property name="useCacheControlHeader" value="true"/>
+            <property name="useCacheControlNoStore" value="true"/>
+        </bean>
+    </mvc:interceptors>
+
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/pages/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <mvc:resources mapping="/resources/**" location="/resources/"/>
+
+    <import resource="configuration/internationalization.xml"/>
+
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="utf-8"/>
+        <property name="maxUploadSize" value="20000000"/>
+    </bean>
+
+    <import resource="configuration/connection-string.xml"/>
+    <import resource="configuration/data-context.xml"/>
+    <import resource="configuration/spring-security.xml"/>
+    <import resource="configuration/scheduler-database-backup.xml"/>
+
+    <bean class="com.test.srv.helper.CurrentUser" id="currentUser" scope="request"/>
+<!--
+    &lt;!&ndash;Bean Configuration in Create User Controller&ndash;&gt;
+    <bean class="UserController" id="createUserController">
+        <property name="userService" ref="userService"/>
+    </bean>
+
+    &lt;!&ndash;Bean Configuration in Create User Service&ndash;&gt;
+    <bean class="UserService" id="userService">
+        <property name="passwordEncoder" ref="passwordEncoder"/>
+    </bean>
+
+    &lt;!&ndash;Bean Configuration in User Login Service&ndash;&gt;
+    <bean class="UserLoginService" id="userLoginService">
+        <property name="passwordEncoder" ref="passwordEncoder"/>
+    </bean>
+
+    &lt;!&ndash;Bean Configuration in Change Password Service&ndash;&gt;
+    <bean id="changePasswordService" class="ChangePasswordService">
+        <property name="passwordEncoder" ref="passwordEncoder"/>
+    </bean>-->
+
+</beans>

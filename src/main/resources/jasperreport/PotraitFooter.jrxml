@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.1.1.final using JasperReports Library version 6.1.1  -->
+<!-- 2017-04-12T10:14:34 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PotraitFooter" pageWidth="595" pageHeight="59" columnWidth="487" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="55ba7dab-5b5a-4620-89f6-aaa3887858a5">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="REPORTPRINTINGUSER" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+		<defaultValueExpression><![CDATA[$P{REPORTPRINTINGUSER}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="RDOSCREENID" class="java.lang.String">
+		<defaultValueExpression><![CDATA[$P{RDOSCREENID}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="RDOREPORTNUMBER" class="java.lang.String">
+		<defaultValueExpression><![CDATA[$P{RDOREPORTNUMBER}]]></defaultValueExpression>
+	</parameter>
+	<queryString language="SQL">
+		<![CDATA[SELECT 
+A.RDOREPORTNUMBER,
+A.RDOREPORTNAME,
+A.RDOSCREENID, 
+A.RDOISDISPLAYMENUADDRESS, 
+A.RDOISDISPLAYALLCRITERIA,
+A.RDOISDISPLAYFULLORGNAME,
+A.RDOISDISPLAYREPORTNUMBER,
+A.RDOISDISPLAYCONFIDENTIALMARK,
+A.RDOISDISPLAYUSER,
+A.RDOSCREENMENUADDRESS
+FROM SA_REPORTDISPLAYOPTION A 
+WHERE A.RDOSCREENID = $P{RDOSCREENID} 
+AND A.RDOREPORTNUMBER = $P{RDOREPORTNUMBER}]]>
+	</queryString>
+	<field name="RDOREPORTNUMBER" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="RDOREPORTNAME" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="RDOSCREENID" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="RDOISDISPLAYMENUADDRESS" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="RDOISDISPLAYALLCRITERIA" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="RDOISDISPLAYFULLORGNAME" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="RDOISDISPLAYREPORTNUMBER" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="RDOISDISPLAYCONFIDENTIALMARK" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="RDOISDISPLAYUSER" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="RDOSCREENMENUADDRESS" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageFooter>
+		<band height="31">
+			<property name="local_measure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="445" y="16" width="95" height="14" uuid="d0bb1f49-cceb-4f31-a4ba-73a067f754b3">
+					<property name="local_measure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Narrow" size="7"/>
+					<paragraph spacingBefore="0"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{RDOISDISPLAYCONFIDENTIALMARK} == true ? "Confidential" : ""]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="0" y="2" width="90" height="14" uuid="d0bb1f49-cceb-4f31-a4ba-73a067f754b3">
+					<property name="local_measure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Narrow" size="7"/>
+					<paragraph spacingBefore="0"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Report Number: " + $F{RDOREPORTNUMBER}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="90" y="2" width="280" height="14" uuid="d0bb1f49-cceb-4f31-a4ba-73a067f754b3">
+					<property name="local_measure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Narrow" size="7"/>
+					<paragraph spacingBefore="0"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{RDOISDISPLAYMENUADDRESS} == true ? $F{RDOSCREENMENUADDRESS} : ""]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="370" y="2" width="170" height="14" uuid="d0bb1f49-cceb-4f31-a4ba-73a067f754b3">
+					<property name="local_measure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Narrow" size="7"/>
+					<paragraph spacingBefore="0"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{RDOISDISPLAYUSER} == true ? "Report Printing User: " + ($P{REPORTPRINTINGUSER} != null ? $P{REPORTPRINTINGUSER} : " " ) : " "]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

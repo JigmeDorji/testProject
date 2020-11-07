@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fontFamilies>
+    <fontFamily name="Garamond">
+        <normal><![CDATA[fonts/garamond/garamond-normal.ttf]]></normal>
+        <!--<bold><![CDATA[fonts/garamond/Garamond Bold font.ttf]]></bold>-->
+        <!--<italic><![CDATA[fonts/garamond/Garamond Medium Italic.ttf]]></italic>-->
+        <!--<bolditalic><![CDATA[fonts/garamond/Garamond Roman.ttf]]></bolditalic>-->
+        <pdfEmbedded><![CDATA[true]]></pdfEmbedded>
+        <exportFonts/>
+    </fontFamily>
+</fontFamilies>
