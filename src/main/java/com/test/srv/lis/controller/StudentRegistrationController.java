@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
-
 @Controller
 @PreAuthorize("isAuthenticated()")
 @RequestMapping("/studentRegistration")
@@ -41,15 +40,6 @@ public class StudentRegistrationController {
         CurrentUser currentUser = (CurrentUser) request.getSession().getAttribute("currentUser");
         return studentRegistrationService.save(studentRegDTO);
     }
-
-
-
-
-
-
-
-
-
 
     @ResponseBody
     @RequestMapping(value = "/getCompanyList", method = RequestMethod.GET)
