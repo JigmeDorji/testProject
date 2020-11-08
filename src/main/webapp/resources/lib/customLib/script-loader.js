@@ -5,6 +5,8 @@
 
    if (document.URL.search("villageRegistration") > 1)
         scriptLoader("resources/js/villageRegistration.js");
+    if (document.URL.search("gewogRegistration") > 1)
+        scriptLoader("resources/js/gewogRegistration.js");
 
     if (document.URL.search("chiwogRegistration") > 1)
         scriptLoader("resources/js/chiwogRegistration.js");
@@ -17,6 +19,7 @@
 
     if (document.URL.search("dzongkhagRegistration") > 1)
         scriptLoader("resources/js/dzongkhagRegistration.js");
+
 
 });
 

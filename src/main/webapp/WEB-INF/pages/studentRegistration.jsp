@@ -119,6 +119,16 @@
                                                                required="true">
                                                     </div>
                                                 </div>
+                                                <div class="form-group mb-3 row">
+                                                    <label class="col-sm-2 col-form-label text-right required">Student
+                                                        Age</label>
+
+                                                    <div class="col-4">
+                                                        <input type="text" name="studentAge"
+                                                               id="studentAge" class="form-control field"
+                                                               required="true">
+                                                    </div>
+                                                </div>
 
                                                 <div class="form-group row offset-2">
                                                     <div class="col-4">
