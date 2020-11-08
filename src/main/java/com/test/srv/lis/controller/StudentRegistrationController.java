@@ -17,9 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
-/**
- * Created by nzepa on 10/11/2020.
- */
+
 @Controller
 @PreAuthorize("isAuthenticated()")
 @RequestMapping("/studentRegistration")
