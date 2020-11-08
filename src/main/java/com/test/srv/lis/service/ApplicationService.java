@@ -38,6 +38,7 @@ public class ApplicationService {
         return applicationDao.getCompanyList();
     }
 
+    //region asdasd
     @Transactional(rollbackOn = Exception.class)
     public ResponseMessage submitApplication(HttpServletRequest request, CurrentUser currentUser
             , ApplicationDTO applicationDTO) throws IOException {
@@ -89,6 +90,7 @@ public class ApplicationService {
         }
         return responseMessage;
     }
+    //endregion
 
     public ResponseMessage getApplicationDetail(String applicationNo) {
         ResponseMessage responseMessage = new ResponseMessage();
@@ -102,6 +104,7 @@ public class ApplicationService {
         }
         return responseMessage;
     }
+
 
     public ResponseMessage getSubmittedApplicationDocuments(String applicationNo) {
         ResponseMessage responseMessage = new ResponseMessage();

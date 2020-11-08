@@ -21,46 +21,15 @@
                             <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"/>
                         </svg>
                     </span>
-                    <span class="nav-link-title">
+                            <span class="nav-link-title">
                       Home
                     </span>
                         </a>
                     </li>
-                    <%--<li class="nav-item dropdown">--%>
-                        <%--<a class="nav-link dropdown-toggle" href="#navbar-extra" data-toggle="dropdown" role="button"--%>
-                           <%--aria-expanded="false">--%>
-                    <%--<span class="nav-link-icon d-md-none d-lg-inline-block">--%>
-                        <%--<svg xmlns="http://www.w3.org/2000/svg"--%>
-                             <%--class="icon icon-md" width="24"--%>
-                             <%--height="24" viewBox="0 0 24 24"--%>
-                             <%--stroke-width="2" stroke="currentColor"--%>
-                             <%--fill="none" stroke-linecap="round"--%>
-                             <%--stroke-linejoin="round">--%>
-                            <%--<path stroke="none" d="M0 0h24v24H0z"></path>--%>
-                            <%--<path d="M7 10h3v-3l-3.5 -3.5a6 6 0 0 1 8 8l6 6a2 2 0 0 1 -3 3l-6-6a6 6 0 0 1 -8 -8l3.5 3.5"></path>--%>
-                        <%--</svg>--%>
-                    <%--</span>--%>
-                    <%--<span class="nav-link-title">--%>
-                      <%--Menu--%>
-                    <%--</span>--%>
-                        <%--</a>--%>
-                        <%--<ul class="dropdown-menu">--%>
-                            <%--<li>--%>
-                                <%--<a class="dropdown-item" href="<c:url value="/company"/>">--%>
-                                    <%--<i class="fa fa-plus"></i>&nbsp;&nbsp;&nbsp;Company--%>
-                                <%--</a>--%>
-                            <%--</li>--%>
-                            <%--<li>--%>
-                                <%--<a class="dropdown-item" href="<c:url value="/user"/>">--%>
-                                    <%--<i class="fa fa-users"></i>&nbsp;&nbsp;&nbsp;Users--%>
-                                <%--</a>--%>
-                            <%--</li>--%>
-                        <%--</ul>--%>
-                    <%--</li>--%>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="<c:url value="/studentRegistration"/>">
-                    <span class="nav-link-icon d-md-none d-lg-inline-block">
+                        <a class="nav-link" href="<c:url value="/studentRegistration"/>">  <!-- url name -->
+                            <span class="nav-link-icon d-md-none d-lg-inline-block">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
                              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
                              stroke-linecap="round" stroke-linejoin="round">
@@ -69,7 +38,7 @@
                             <path d="M20 12v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h9"></path>
                         </svg>
                     </span>
-                    <span class="nav-link-title">
+                            <span class="nav-link-title">
                       Student Registration
                     </span>
                         </a>
@@ -77,6 +46,9 @@
                     <!--Village Registration-->
                     <li class="nav-item">
                         <a class="nav-link" href="<c:url value="/villageRegistration"/>">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="<c:url value="/customerSetup"/>">
                     <span class="nav-link-icon d-md-none d-lg-inline-block">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
                              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
@@ -105,12 +77,27 @@
                         <polyline points="9 11 12 14 20 6"/>
                         <path d="M20 12v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h9"/>
                     </svg>
-                    </span>
-                    <span class="nav-link-title">
-                     Tax Detail
+
+                      Customer Setup
                     </span>
                         </a>
-                    </li>--%>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<c:url value="/dzongkhagRegistration"/>">
+                    <span class="nav-link-icon d-md-none d-lg-inline-block">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
+                             viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                             stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z"></path>
+                            <polyline points="9 11 12 14 20 6"></polyline>
+                            <path d="M20 12v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h9"></path>
+                        </svg>
+                    </span>
+                            <span class="nav-link-title">
+                                    Dzongkhag Registration
+                            </span>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
