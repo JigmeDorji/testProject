@@ -31,7 +31,7 @@ public class StudentRegistrationController {
     }
 
     @ResponseBody
-    @RequestMapping(value = "/getCompanyList", method = RequestMethod.GET)
+    @RequestMapping(value = "/getCompanyListsdsd", method = RequestMethod.GET)
     public ResponseMessage getCompanyList() {
         return companyService.getCompanyList();
     }
