@@ -42,6 +42,8 @@
                             </span>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<c:url value="/countrySetup"/>">
 
 
                     <li class="nav-item">
@@ -56,10 +58,11 @@
                         </svg>
                     </span>
                             <span class="nav-link-title">
-                      Customer Setup
+                       Country Setup
                     </span>
                         </a>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="<c:url value="/dzongkhagRegistration"/>">
                     <span class="nav-link-icon d-md-none d-lg-inline-block">
