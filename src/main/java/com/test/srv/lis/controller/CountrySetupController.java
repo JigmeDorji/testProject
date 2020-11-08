@@ -27,6 +27,8 @@ public class CountrySetupController {
     @RequestMapping(value="", method = RequestMethod.GET)
     public String index() {
     return "countrySetup";
+
+
     }
     @ResponseBody
     @RequestMapping(value = "/countrySaveDetail", method = RequestMethod.POST)
