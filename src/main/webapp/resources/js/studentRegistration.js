@@ -9,7 +9,7 @@ studentRegistration = (function () {
         return 'studentRegistration/';
     }
 
-    function savedd() {
+    function save() {
         $('#btnSave').on('click', function () {
             $.validator.setDefaults({
                 submitHandler: function () {
