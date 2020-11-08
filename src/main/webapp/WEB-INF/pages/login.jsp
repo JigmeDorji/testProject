@@ -72,13 +72,12 @@
                 <div class="row align-items-center">
                     <div class="col-auto">
                         <ul class="list-inline list-inline-dots mb-0">
-                            <li class="list-inline-item">System developed and maintained by <a href="/">Thimphu TechPark Ltd</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-lg-auto mt-3 mt-lg-0 text-center">
-                Copyright © 2020 <a href=".">Druk Holding and Investment.</a> All rights reserved.
+                Copyright © 2020 <a href=".">Training .</a> All rights reserved.
             </div>
         </div>
     </div>
