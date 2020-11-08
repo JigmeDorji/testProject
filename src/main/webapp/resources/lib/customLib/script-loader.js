@@ -6,6 +6,11 @@
    if (document.URL.search("villageRegistration") > 1)
         scriptLoader("resources/js/villageRegistration.js");
 
+    if (document.URL.search("chiwogRegistration") > 1)
+        scriptLoader("resources/js/chiwogRegistration.js");
+
+    if (document.URL.search("countrySetup") > 1)
+        scriptLoader("resources/js/countrySetup.js");
 
     if (document.URL.search("customerSetup") > 1)
         scriptLoader("resources/js/customerSetup.js");
