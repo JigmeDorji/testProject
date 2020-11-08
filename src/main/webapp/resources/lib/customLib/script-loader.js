@@ -2,8 +2,12 @@
 
     if (document.URL.search("studentRegistration") > 1)
         scriptLoader("resources/js/studentRegistration.js");
+
     if (document.URL.search("chiwogRegistration") > 1)
         scriptLoader("resources/js/chiwogRegistration.js");
+
+    if (document.URL.search("dzongkhagRegistration") > 1)
+        scriptLoader("resources/js/dzongkhagRegistration.js");
 
 });
 
