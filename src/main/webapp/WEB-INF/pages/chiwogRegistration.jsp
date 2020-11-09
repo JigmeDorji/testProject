@@ -11,7 +11,7 @@
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <head>
-    <title>Student Registration</title>
+    <title>Chiwog Registration</title>
 </head>
 <body>
 <%--<script src="<c:url value="/resources/js/studentRegistration.js"/>"></script>--%>
@@ -25,7 +25,7 @@
                             <div class="col-auto">
 
                                 <h3 class="text-dark">
-                                    Student List
+                                    Chiwog List
                                 </h3>
                             </div>
                             <!-- Page title actions -->
@@ -55,7 +55,7 @@
                                        id="companyTableId">
                                     <thead>
                                     <tr>
-                                        <th class="text-muted">Student Name</th>
+                                        <th class="text-muted">Chiwog Name</th>
                                     </tr>
                                     <tbody>
                                     </tbody>
@@ -79,7 +79,7 @@
                                             <line x1="16" y1="11" x2="22" y2="11"></line>
                                             <line x1="19" y1="8" x2="19" y2="14"></line>
                                         </svg>
-                                        Student Detail
+                                        Chiwog Detail
                                     </h5>
                                     <h5 class="modal-title viewCompany hidden">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-md"
@@ -94,38 +94,27 @@
                                     </h5>
                                     <button type="button" class="close" data-dismiss="modal"
                                             aria-label="Close">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
-                                             height="24" viewBox="0 0 24 24"
-                                             stroke-width="2" stroke="currentColor" fill="none"
-                                             stroke-linecap="round" stroke-linejoin="round">
-                                            <path stroke="none" d="M0 0h24v24H0z"/>
-                                            <line x1="18" y1="6" x2="6" y2="18"/>
-                                            <line x1="6" y1="6" x2="18" y2="18"/>
-                                        </svg>
                                     </button>
                                 </div>
                                 <div class="modal-body">
                                     <div class="card">
                                         <div class="card-body">
-                                            <form id="studentRegistrationForm" action="<c:url value='/studentRegistration'/>"
-                                                  class="form-horizontal globalForm studentRegistrationForm">
+                                            <form id="chiwogRegistrationForm" action="<c:url value='/chiwogRegistration'/>"
+                                                  class="form-horizontal globalForm chiwogRegistrationForm">
                                                 <div class="form-group mb-3 row">
-                                                    <label class="col-sm-2 col-form-label text-right required">Student
+                                                    <label class="col-sm-2 col-form-label text-right required">Chiwog
                                                         Name</label>
 
-                                                    <div class="col-4">
-                                                        <input type="text" name="studentName"
-                                                               id="studentName" class="form-control field"
-                                                               required="true">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group mb-3 row">
-                                                    <label class="col-sm-2 col-form-label text-right required">Student
-                                                        Age</label>
 
                                                     <div class="col-4">
-                                                        <input type="text" name="studentAge"
-                                                               id="studentAge" class="form-control field"
+                                                        <input type="text" name="chiwogName"
+                                                               id="chiwogName" class="form-control field"
+                                                               required="true">
+                                                    </div>
+                                                    <label class="col-sm-2 col-form-label text-right required">Mobile</label>
+                                                    <div class="col-4">
+                                                        <input type="text" name="Mobile"
+                                                               id="Mobile" class="form-control field"
                                                                required="true">
                                                     </div>
                                                 </div>

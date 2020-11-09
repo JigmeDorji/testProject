@@ -32,6 +32,7 @@ public class HomeController {
      *                 //     * @param authentication authentication
      * @return ModelAndView
      */
+
     @RequestMapping(value = {"/", "home"})
     public ModelAndView home(HttpServletRequest request, HttpServletResponse response, Authentication authentication) {
         ModelAndView modelAndView = new ModelAndView();
@@ -59,7 +60,6 @@ public class HomeController {
                         "change password.");
             }
         }
-
         modelAndView.setViewName("home");
         return modelAndView;
     }
