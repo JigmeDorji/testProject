@@ -2,7 +2,6 @@
 
     if (document.URL.search("studentRegistration") > 1)
         scriptLoader("resources/js/studentRegistration.js");
-
 });
 
 var scriptLoader = function (url) {
