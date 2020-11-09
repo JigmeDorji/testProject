@@ -4,7 +4,8 @@
 
 employeeRegistration = (function () {
     "use strict";
-    var form =$('#employeeRegistrationForm');
+    var form = $('#employeeRegistrationForm');
+
     function _baseURL() {
         return 'employeeRegistration/';
     }
@@ -73,14 +74,48 @@ employeeRegistration = (function () {
         });
     }
 
-    return {
-        save: save
+    function getEmployeeList() {
+        $.ajax({
+            url: _baseURL() + 'getEmployeeList',
+            type: 'GET',
+            success: function (res) {
+                var columnDef = [
+                    {
+                        "mRender": function (data, type, row, meta) {
+                            return meta.row + 1;
+                        }
+                    },
+                    {data: 'employeeName'},
+                    {data: 'employeeDesignation'},
+                    {data: 'employeeDepartment'},
+                    {data: 'employeeContactNumber'},
+                    {data: 'employeeDateOfBirth',
+                        render: function (data) {
+                        return formatAsDate(data)
+                    }
+                    }
+
+                ];
+                $('#employeeListTableId').DataTable({
+                    data: res
+                    , columns: columnDef
+                    , destroy: true
+                    , bSort: false
+                    , "auto-width": true
+                });
+            }
+        });
     }
+
+    return {
+        save: save,
+        getEmployeeList: getEmployeeList
+    }
+
 })();
 
 $(document).ready(function () {
-
     employeeRegistration.save();
-
+    employeeRegistration.getEmployeeList();
 
 });

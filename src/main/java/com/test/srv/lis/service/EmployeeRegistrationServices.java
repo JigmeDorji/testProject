@@ -7,6 +7,8 @@ import com.test.srv.lis.entity.EmployeeRegistrationEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class EmployeeRegistrationServices {
 
@@ -20,6 +22,7 @@ public class EmployeeRegistrationServices {
         employeeRegistrationEntity.setEmp_Designation(employeeRegistrationDTO.getEmployeeDesignation());
         employeeRegistrationEntity.setEmp_Department(employeeRegistrationDTO.getEmployeeDepartment());
         employeeRegistrationEntity.setEmp_Contact_No(employeeRegistrationDTO.getEmployeeContactNumber());
+        employeeRegistrationEntity.setEmp_Dob(employeeRegistrationDTO.getEmployeeDateOfBirth());
 
         employeeRegistrationDao.save(employeeRegistrationEntity);
 
@@ -30,4 +33,7 @@ public class EmployeeRegistrationServices {
     }
 
 
+    public List<EmployeeRegistrationDTO> getEmployeeList() {
+        return employeeRegistrationDao.getEmployeeList();
+    }
 }

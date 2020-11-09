@@ -1,11 +1,24 @@
 package com.test.srv.lis.dto;
 
+
+import java.util.Date;
+
 public class EmployeeRegistrationDTO {
 
+    private Integer id;
     private String employeeName;
     private String employeeDesignation;
     private String employeeDepartment;
     private String employeeContactNumber;
+    private Date employeeDateOfBirth;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getEmployeeName() {
         return employeeName;
@@ -38,4 +51,14 @@ public class EmployeeRegistrationDTO {
     public void setEmployeeContactNumber(String employeeContactNumber) {
         this.employeeContactNumber = employeeContactNumber;
     }
+
+    public Date getEmployeeDateOfBirth() {
+        return employeeDateOfBirth;
+    }
+
+    public void setEmployeeDateOfBirth(Date employeeDateOfBirth) {
+        this.employeeDateOfBirth = employeeDateOfBirth;
+    }
 }
+
+

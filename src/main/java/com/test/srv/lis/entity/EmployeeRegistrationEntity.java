@@ -1,6 +1,7 @@
 package com.test.srv.lis.entity;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "tbl_employee")
@@ -23,6 +24,8 @@ public class EmployeeRegistrationEntity {
     @Column(name = "emp_Contact_No")
     private String emp_Contact_No;
 
+    @Column(name = "emp_Dob")
+    private Date emp_Dob;
 
     public Integer getId() {
         return id;
@@ -62,5 +65,13 @@ public class EmployeeRegistrationEntity {
 
     public void setEmp_Contact_No(String emp_Contact_No) {
         this.emp_Contact_No = emp_Contact_No;
+    }
+
+    public Date getEmp_Dob() {
+        return emp_Dob;
+    }
+
+    public void setEmp_Dob(Date emp_Dob) {
+        this.emp_Dob = emp_Dob;
     }
 }

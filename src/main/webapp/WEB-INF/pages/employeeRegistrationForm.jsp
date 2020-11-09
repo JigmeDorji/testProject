@@ -43,18 +43,17 @@
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table card-table text-nowrap table-bordered col-md-12"
-                                       id="employeeTableId">
+                                       id="employeeListTableId">
                                     <thead>
                                     <tr>
+                                        <th class="text-muted">Sl No</th>
                                         <th class="text-muted">Employee Name</th>
                                         <th class="text-muted">Designation Name</th>
                                         <th class="text-muted">Department</th>
                                         <th class="text-muted">Contact Number</th>
+                                        <th class="text-muted">Date of Birth</th>
                                     </tr>
                                     <tbody>
-                                    <tr>
-                                        <th></th>
-                                    </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -80,6 +79,7 @@
                                         <div class="card-body">
                                             <form id="employeeRegistrationForm" action="<c:url value='/employeeRegistration'/>"
                                                   class="form-horizontal globalForm employeeRegistrationForm">
+
                                                 <div class="form-group mb-3 row">
                                                     <label class="col-sm-2 col-form-label text-right required">Employee Name</label>
                                                     <div class="col-4">
@@ -113,6 +113,15 @@
                                                         <input type="text" name="employeeContactNumber"
                                                                id="employeeContactNumber" class="form-control field"
                                                                required="true">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group mb-3 row">
+                                                    <label class="col-sm-2 col-form-label text-right required">Date of Birth</label>
+                                                    <div class="col-4">
+                                                        <input type="text" name="employeeDateOfBirth"
+                                                               id="employeeDateOfBirth" class="form-control field"
+                                                               required="true" placeholder="YYYY-MM-DD">
                                                     </div>
                                                 </div>
 
