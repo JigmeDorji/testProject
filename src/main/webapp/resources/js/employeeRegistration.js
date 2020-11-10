@@ -21,9 +21,19 @@ employeeRegistration = (function () {
                     data: $(form).serializeArray(),
                     success: function (res) {
                         if (res.status == 1) {
+
+                            $("#employeeId").val('');
+                            $("#employeeName").val('');
+                            $("#employeeDesignation").val('');
+                            $("#employeeDepartment").val('');
+                            $("#employeeContactNumber").val('');
+                            $("#employeeDateOfBirth").val('');
+
                             successMsg(res.text);
                             $('#employeeModal').modal('hide');
                             $('#btnSave').attr("disabled", false);
+
+                            $("#btnSave").val("Save");
 
                             getEmployeeList();
                         }
@@ -126,20 +136,6 @@ employeeRegistration = (function () {
 
             $("#btnSave").val("Update");
 
-            /* $.ajax({
-                 url: _baseURL() + 'editEmployeeInfoByEmployeeId',
-                 type: 'POST',
-                 data: {employeeId: employeeId},
-                 success: function (res) {
-                     if (res.status == 1) {
-                         successMsg(res.text);
-
-                         getEmployeeList();
-                     } else {
-                         errorMsg(res.text)
-                     }
-                 }
-             });*/
         });
     }
 
