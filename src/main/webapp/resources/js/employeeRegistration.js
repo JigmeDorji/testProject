@@ -40,7 +40,7 @@ employeeRegistration = (function () {
             success: function (res) {
                 var columnDef = [
                     {data: 'id', class: "employeeId align-middle"},
-                    {data: 'employeeName'},
+                    {data: 'employeeName', class: "employeeName align-middle"},
                     {data: 'employeeDesignation'},
                     {data: 'employeeDepartment'},
                     {data: 'employeeContactNumber'},
@@ -50,7 +50,6 @@ employeeRegistration = (function () {
                             return formatAsDate(data)
                         }
                     },
-
                     {
                         "data": "null",
                         "mRender": function () {
@@ -74,10 +73,11 @@ employeeRegistration = (function () {
         $('#employeeListTableId tbody').on('click', 'tr #btnDelete', function () {
             var row = $(this).closest('tr');
             var employeeId = row.find('.employeeId').text();
+            var employeeName = row.find('.employeeName').text();
             var url = _baseURL() + 'deleteEmployeeByEmployeeId';
 
             swal({
-                title: "Are you sure to delete user " + employeeId + "?",
+                title: "Are you sure to delete this employee " + employeeName + "?",
                 text: "You will not be able to recover!",
                 type: "warning",
                 showCancelButton: true,
@@ -85,6 +85,7 @@ employeeRegistration = (function () {
                 confirmButtonText: "Confirm",
                 closeOnConfirm: false
             }, function (isConfirm) {
+                if (!isConfirm) return;
                 $.ajax({
                     url: url,
                     type: 'POST',
