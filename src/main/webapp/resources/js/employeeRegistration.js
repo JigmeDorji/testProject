@@ -41,11 +41,11 @@ employeeRegistration = (function () {
                 var columnDef = [
                     {data: 'id', class: "employeeId align-middle"},
                     {data: 'employeeName', class: "employeeName align-middle"},
-                    {data: 'employeeDesignation'},
-                    {data: 'employeeDepartment'},
-                    {data: 'employeeContactNumber'},
+                    {data: 'employeeDesignation', class: "employeeDesignation align-middle"},
+                    {data: 'employeeDepartment', class: "employeeDepartment align-middle"},
+                    {data: 'employeeContactNumber', class: "employeeContactNumber align-middle"},
                     {
-                        data: 'employeeDateOfBirth',
+                        data: 'employeeDateOfBirth', class: "employeeDateOfBirth align-middle",
                         render: function (data) {
                             return formatAsDate(data)
                         }
@@ -53,7 +53,8 @@ employeeRegistration = (function () {
                     {
                         "data": "null",
                         "mRender": function () {
-                            return '<a href="#" id="btnDelete" class="btn btn-danger btn-sm ml-3 d-none d-sm-inline-block">Delete</a>';
+                            return '<a href="#" id="btnDelete" class="btn btn-danger btn-sm ml-3 d-none d-sm-inline-block">Delete</a>' +
+                                '<a href="#" id="btnEdit" class="btn btn-primary btn-sm ml-3 d-none d-sm-inline-block">Edit</a>';
                         }
                     }
 
@@ -104,10 +105,49 @@ employeeRegistration = (function () {
         })
     }
 
+    function EditEmployee() {
+        $('#employeeListTableId tbody').on('click', 'tr #btnEdit', function () {
+            var row = $(this).closest('tr');
+            var employeeId = row.find('.employeeId').text();
+            var employeeName = row.find('.employeeName').text();
+            var employeeDesignation = row.find('.employeeDesignation').text();
+            var employeeDepartment = row.find('.employeeDepartment').text();
+            var employeeContactNumber = row.find('.employeeContactNumber').text();
+            var employeeDateOfBirth = row.find('.employeeDateOfBirth').text();
+
+            $("#employeeId").val(employeeId);
+            $("#employeeName").val(employeeName);
+            $("#employeeDesignation").val(employeeDesignation);
+            $("#employeeDepartment").val(employeeDepartment);
+            $("#employeeContactNumber").val(employeeContactNumber);
+            $("#employeeDateOfBirth").val(employeeDateOfBirth);
+
+            $('#employeeModal').modal('show');
+
+            $("#btnSave").val("Update");
+
+            /* $.ajax({
+                 url: _baseURL() + 'editEmployeeInfoByEmployeeId',
+                 type: 'POST',
+                 data: {employeeId: employeeId},
+                 success: function (res) {
+                     if (res.status == 1) {
+                         successMsg(res.text);
+
+                         getEmployeeList();
+                     } else {
+                         errorMsg(res.text)
+                     }
+                 }
+             });*/
+        });
+    }
+
     return {
         save: save,
         getEmployeeList: getEmployeeList,
-        deleteEmployee: deleteEmployee
+        deleteEmployee: deleteEmployee,
+        EditEmployee: EditEmployee
     }
 
 })();
@@ -116,5 +156,6 @@ $(document).ready(function () {
     employeeRegistration.save();
     employeeRegistration.getEmployeeList();
     employeeRegistration.deleteEmployee();
+    employeeRegistration.EditEmployee();
 
 });

@@ -18,17 +18,34 @@ public class EmployeeRegistrationServices {
     public ResponseMessage save(EmployeeRegistrationDTO employeeRegistrationDTO) {
         EmployeeRegistrationEntity employeeRegistrationEntity = new EmployeeRegistrationEntity();
 
-        employeeRegistrationEntity.setEmp_Name(employeeRegistrationDTO.getEmployeeName());
-        employeeRegistrationEntity.setEmp_Designation(employeeRegistrationDTO.getEmployeeDesignation());
-        employeeRegistrationEntity.setEmp_Department(employeeRegistrationDTO.getEmployeeDepartment());
-        employeeRegistrationEntity.setEmp_Contact_No(employeeRegistrationDTO.getEmployeeContactNumber());
-        employeeRegistrationEntity.setEmp_Dob(employeeRegistrationDTO.getEmployeeDateOfBirth());
-
-        employeeRegistrationDao.save(employeeRegistrationEntity);
-
         ResponseMessage responseMessage = new ResponseMessage();
-        responseMessage.setStatus(1);
-        responseMessage.setText("Employee Details saved successfully");
+        if (employeeRegistrationDTO.getId() != null) {
+            employeeRegistrationEntity.setId(employeeRegistrationDTO.getId());
+
+            employeeRegistrationEntity.setEmp_Name(employeeRegistrationDTO.getEmployeeName());
+            employeeRegistrationEntity.setEmp_Designation(employeeRegistrationDTO.getEmployeeDesignation());
+            employeeRegistrationEntity.setEmp_Department(employeeRegistrationDTO.getEmployeeDepartment());
+            employeeRegistrationEntity.setEmp_Contact_No(employeeRegistrationDTO.getEmployeeContactNumber());
+            employeeRegistrationEntity.setEmp_Dob(employeeRegistrationDTO.getEmployeeDateOfBirth());
+
+            employeeRegistrationDao.update(employeeRegistrationEntity);
+
+            responseMessage.setStatus(1);
+            responseMessage.setText("Employee Details Updated successfully");
+
+        } else {
+
+            employeeRegistrationEntity.setEmp_Name(employeeRegistrationDTO.getEmployeeName());
+            employeeRegistrationEntity.setEmp_Designation(employeeRegistrationDTO.getEmployeeDesignation());
+            employeeRegistrationEntity.setEmp_Department(employeeRegistrationDTO.getEmployeeDepartment());
+            employeeRegistrationEntity.setEmp_Contact_No(employeeRegistrationDTO.getEmployeeContactNumber());
+            employeeRegistrationEntity.setEmp_Dob(employeeRegistrationDTO.getEmployeeDateOfBirth());
+
+            employeeRegistrationDao.save(employeeRegistrationEntity);
+            responseMessage.setStatus(1);
+            responseMessage.setText("Employee Details Save successfully");
+        }
+
         return responseMessage;
     }
 

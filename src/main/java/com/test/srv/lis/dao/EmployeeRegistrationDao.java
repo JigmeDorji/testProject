@@ -16,7 +16,7 @@ public class EmployeeRegistrationDao extends BaseDao{
 
     @Transactional(value = "txManager", rollbackFor = Exception.class)
     public void save(EmployeeRegistrationEntity employeeRegistration) {
-        em.merge(employeeRegistration);
+        em.persist(employeeRegistration);
     }
 
 
@@ -36,4 +36,10 @@ public class EmployeeRegistrationDao extends BaseDao{
                 .executeUpdate();
 
     }
+
+    @Transactional(value = "txManager", rollbackFor = Exception.class)
+    public void update(EmployeeRegistrationEntity employeeRegistration) {
+        em.merge(employeeRegistration);
+    }
+
 }

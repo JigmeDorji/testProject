@@ -81,6 +81,18 @@
                                             <form id="employeeRegistrationForm" action="<c:url value='/employeeRegistration'/>"
                                                   class="form-horizontal globalForm employeeRegistrationForm">
 
+                                                <%--<div class="form-group mb-3 row">
+                                                    <label class="col-sm-2 col-form-label text-right required">Employee Id</label>
+                                                    <div class="col-4">
+                                                        <input type="text" name="employeeId"
+                                                               id="employeeId" class="form-control field"
+                                                               required="true">
+                                                    </div>
+                                                </div>--%>
+
+                                                    <input type="hidden" name="id"
+                                                           id="employeeId" class="form-control field">
+
                                                 <div class="form-group mb-3 row">
                                                     <label class="col-sm-2 col-form-label text-right required">Employee Name</label>
                                                     <div class="col-4">
