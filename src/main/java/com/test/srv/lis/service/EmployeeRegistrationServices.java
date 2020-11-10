@@ -36,4 +36,13 @@ public class EmployeeRegistrationServices {
     public List<EmployeeRegistrationDTO> getEmployeeList() {
         return employeeRegistrationDao.getEmployeeList();
     }
+
+    public ResponseMessage deleteEmployeeByEmployeeId(Integer employeeId) {
+
+        ResponseMessage responseMessage = new ResponseMessage();
+        employeeRegistrationDao.deleteEmployeeByEmployeeId(employeeId);
+        responseMessage.setStatus(1);
+        responseMessage.setText("Employee Information Delete successfully");
+        return responseMessage;
+    }
 }

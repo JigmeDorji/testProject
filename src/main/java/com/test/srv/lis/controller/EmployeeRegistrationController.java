@@ -43,4 +43,10 @@ public class EmployeeRegistrationController {
         return employeeRegistrationServices.getEmployeeList();
     }
 
+    @ResponseBody
+    @RequestMapping(value = "/deleteEmployeeByEmployeeId", method = RequestMethod.POST)
+    public ResponseMessage deleteEmployeeByEmployeeId(Integer employeeId) {
+        return employeeRegistrationServices.deleteEmployeeByEmployeeId(employeeId);
+    }
+
 }

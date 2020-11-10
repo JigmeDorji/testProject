@@ -67,6 +67,8 @@ employeeRegistration = (function () {
                     success: function (res) {
                         if (res.status == 1) {
                             successMsg(res.text);
+
+                            getEmployeeList();
                         }
                     }
                 });
@@ -80,19 +82,23 @@ employeeRegistration = (function () {
             type: 'GET',
             success: function (res) {
                 var columnDef = [
-                    {
-                        "mRender": function (data, type, row, meta) {
-                            return meta.row + 1;
-                        }
-                    },
+                    {data: 'id', class: "employeeId align-middle"},
                     {data: 'employeeName'},
                     {data: 'employeeDesignation'},
                     {data: 'employeeDepartment'},
                     {data: 'employeeContactNumber'},
-                    {data: 'employeeDateOfBirth',
+                    {
+                        data: 'employeeDateOfBirth',
                         render: function (data) {
-                        return formatAsDate(data)
-                    }
+                            return formatAsDate(data)
+                        }
+                    },
+
+                    {
+                        "data": "null",
+                        "mRender": function () {
+                            return '<a href="#" id="btnDelete" class="btn btn-danger btn-sm ml-3 d-none d-sm-inline-block">Delete</a>';
+                        }
                     }
 
                 ];
@@ -107,9 +113,42 @@ employeeRegistration = (function () {
         });
     }
 
+    function deleteEmployee() {
+        $('#employeeListTableId tbody').on('click', 'tr #btnDelete', function () {
+            var row = $(this).closest('tr');
+            var employeeId = row.find('.employeeId').text();
+            var url = _baseURL() + 'deleteEmployeeByEmployeeId';
+
+            swal({
+                title: "Are you sure to delete user " + employeeId + "?",
+                text: "You will not be able to recover!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Confirm",
+                closeOnConfirm: false
+            }, function (isConfirm) {
+                $.ajax({
+                    url: url,
+                    type: 'POST',
+                    data: {employeeId: employeeId},
+                    success: function (res) {
+                        if (res.status == 1) {
+                            successMsg(res.text);
+                            getEmployeeList();
+                        } else {
+                            errorMsg(res.text)
+                        }
+                    }
+                });
+            });
+        })
+    }
+
     return {
         save: save,
-        getEmployeeList: getEmployeeList
+        getEmployeeList: getEmployeeList,
+        deleteEmployee: deleteEmployee
     }
 
 })();
@@ -117,5 +156,6 @@ employeeRegistration = (function () {
 $(document).ready(function () {
     employeeRegistration.save();
     employeeRegistration.getEmployeeList();
+    employeeRegistration.deleteEmployee();
 
 });

@@ -27,4 +27,13 @@ public class EmployeeRegistrationDao extends BaseDao{
         return hQuery.list().isEmpty()? null : hQuery.list();
 
     }
+
+    @Transactional
+    public void deleteEmployeeByEmployeeId(Integer employeeId) {
+        String delSQL = properties.getProperty("EmployeeRegistrationDao.deleteEmployeeById");
+        hibernateQuery(delSQL)
+                .setParameter("employeeId", employeeId)
+                .executeUpdate();
+
+    }
 }

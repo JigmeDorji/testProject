@@ -52,6 +52,7 @@
                                         <th class="text-muted">Department</th>
                                         <th class="text-muted">Contact Number</th>
                                         <th class="text-muted">Date of Birth</th>
+                                        <th class="text-muted">Action</th>
                                     </tr>
                                     <tbody>
                                     </tbody>
@@ -120,10 +121,12 @@
                                                     <label class="col-sm-2 col-form-label text-right required">Date of Birth</label>
                                                     <div class="col-4">
                                                         <input type="text" name="employeeDateOfBirth"
-                                                               id="employeeDateOfBirth" class="form-control field"
+                                                               id="employeeDateOfBirth" class="form-control field datepicker"
                                                                required="true" placeholder="YYYY-MM-DD">
                                                     </div>
                                                 </div>
+
+
 
                                                 <div class="form-group row offset-2">
                                                     <div class="col-4">
