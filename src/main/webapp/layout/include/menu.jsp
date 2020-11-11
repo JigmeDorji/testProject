@@ -8,11 +8,13 @@
         <div class="navbar navbar-light">
             <li class="nav-item">
                 <a class="nav-link" href="<c:url value="/chiwogRegistration"/>">
+                <a class="nav-link" href="<c:url value="/customerSetup"/>">
                         <span class="nav-link-icon d-md-none d-lg-inline-block">
 
                         </span>
                         <span class="nav-link-title">
                          Chiwog Registration
+                            customerSetup
                             </span>
                 </a>
             </li>
