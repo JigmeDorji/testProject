@@ -24,6 +24,7 @@ countrySetup = (function () {
                             $('#countryId').val('');//give value to modal
                             $('#countryName').val('');//give value to modal
                             successMsg(res.text);
+                            getCountryName();
                             $('#companyDetailModal').modal('hide');
                         }
                     }
@@ -112,12 +113,26 @@ countrySetup = (function () {
         })
     }
 
+    function reportCountryList() {
+        $('#btnMyReport').on('click', function () {
+
+            $.ajax({
+                url: _baseURL() + 'reportCountryList',
+                type: 'GET',
+                success: function (res) {
+                    window.open(ttplGlobal.baseReportLocation() + res.dto.reportName, '_blank');
+                }
+            });
+        })
+    }
+
 
     return {
         save: save,
         getCountryName: getCountryName,
         deleteCountryName: deleteCountryName,
-        editCountryName: editCountryName
+        editCountryName: editCountryName,
+        reportCountryList: reportCountryList
     }
 })();
 
@@ -126,11 +141,8 @@ $(document).ready(function () {
     countrySetup.getCountryName();
     countrySetup.deleteCountryName();
     countrySetup.editCountryName();
+    countrySetup.reportCountryList();
+
 });
 
 
-$(document).ready(function () {
-    countrySetup.save();
-    countrySetup.getCountryName();
-    countrySetup.deleteCountryName();
-});

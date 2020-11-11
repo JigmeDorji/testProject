@@ -25,7 +25,7 @@
                             <div class="col-auto">
 
                                 <h3 class="text-dark">
-                                    Student List
+                                    Customer List
                                 </h3>
                             </div>
                             <!-- Page title actions -->
@@ -36,23 +36,40 @@
                                     Add New
                                 </a>
                             </div>
+                            <div class="col-auto ml-auto d-print-none">
+                                <a href="#"
+                                   class="btn btn-primary btn-sm ml-3 d-none d-sm-inline-block"
+                                   id="btnGenerate">
+                                    Generate Report
+                                </a>
+                            </div>
                         </div>
                     </div>
                     <div class="card">
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table card-table text-nowrap table-bordered col-md-12"
-                                       id="companyTableId">
+                                       id="customerSetupGrid">
                                     <thead>
                                     <tr>
+                                        <th class="text-muted">Sl No</th>
+                                        <th class="text-muted">Id</th>
                                         <th class="text-muted">Customer Name</th>
+                                        <th class="text-muted">Contact No</th>
+                                        <th class="text-muted">Action</th>
                                     </tr>
                                     <tbody>
                                     </tbody>
                                 </table>
+                                <div class="col-4">
+                                    <input type="text" name="sumTotal"
+                                           id="sumTotal" class="form-control field"
+                                           required="true">
+                                </div>
                             </div>
                         </div>
                     </div>
+
                     <div class="modal modal-blur fade" id="companyDetailModal" tabindex="-1"
                          role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false">
                         <div class="modal-dialog modal-xl" role="document">
@@ -82,6 +99,11 @@
                                                                id="customerName" class="form-control field"
                                                                required="true">
                                                     </div>
+                                                    <div class="col-4">
+                                                        <input type="hidden" name="id"
+                                                               id="id" class="form-control field"
+                                                               required="true">
+                                                    </div>
                                                 </div>
                                                 <div class="form-group mb-3 row">
                                                     <label class="col-sm-2 col-form-label text-right required">Contact
@@ -93,7 +115,6 @@
                                                                id="contactNo" class="form-control field"
                                                                required="true">
                                                     </div>
-                                                </div>
                                                 <div class="form-group row offset-2">
                                                     <div class="col-4">
                                                         <input type="submit"
@@ -106,6 +127,7 @@
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
