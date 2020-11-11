@@ -7,12 +7,12 @@
     <div class="collapse navbar-collapse" id="navbar-menu">
         <div class="navbar navbar-light">
             <li class="nav-item">
-                <a class="nav-link" href="<c:url value="/studentRegistration"/>">
+                <a class="nav-link" href="<c:url value="/countrySetup"/>">
                         <span class="nav-link-icon d-md-none d-lg-inline-block">
 
                         </span>
                         <span class="nav-link-title">
-                            Student Registration
+                            Country
                             </span>
                 </a>
             </li>
