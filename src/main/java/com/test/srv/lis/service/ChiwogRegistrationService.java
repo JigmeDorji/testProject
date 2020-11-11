@@ -11,6 +11,8 @@ import com.test.srv.lis.entity.ChiwogRegistration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ChiwogRegistrationService {
 
@@ -18,14 +20,35 @@ public class ChiwogRegistrationService {
     ChiwogRegistrationDao chiwogRegistrationDao;
 
     public ResponseMessage save(ChiwogRegistrationDTO chiwogRegistrationDTO) {
-        ChiwogRegistration chiwogRegistration = new ChiwogRegistration();
-        chiwogRegistration.setChiwogName(chiwogRegistrationDTO.getChiwogName());
-        chiwogRegistrationDao.save(chiwogRegistration);
-
         ResponseMessage responseMessage = new ResponseMessage();
-        responseMessage.setStatus(1);
-        responseMessage.setText("Chiwog Resgistration successfully saved");
+        ChiwogRegistration chiwogRegistration = new ChiwogRegistration();
+        if(chiwogRegistrationDTO.getId() != null){
+            chiwogRegistration.setId(chiwogRegistrationDTO.getId());
+            chiwogRegistration.setChiwogName(chiwogRegistrationDTO.getChiwogName());
+            chiwogRegistrationDao.update(chiwogRegistration);
+            responseMessage.setStatus(1);
+            responseMessage.setText("Chiwog Resgistration updated");
+        }
+        else{
+            chiwogRegistration.setChiwogName(chiwogRegistrationDTO.getChiwogName());
+            chiwogRegistrationDao.save(chiwogRegistration);
+            responseMessage.setStatus(1);
+            responseMessage.setText("Chiwog Resgistration save");
+        }
+
         return responseMessage;
 
+    }
+
+    public List<ChiwogRegistrationDTO> getChiwogList() {
+        return chiwogRegistrationDao.getChiwogList();
+    }
+
+    public ResponseMessage deleteChiwogInfoByChiwogId(Integer chiwogId) {
+        ResponseMessage responseMessage = new ResponseMessage();
+        chiwogRegistrationDao.deleteChiwogInfoByChiwogId(chiwogId);
+        responseMessage.setStatus(1);
+        responseMessage.setText("chiwog information succefully deleted");
+        return responseMessage;
     }
 }

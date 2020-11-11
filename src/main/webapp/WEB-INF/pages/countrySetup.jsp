@@ -42,10 +42,14 @@
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table card-table text-nowrap table-bordered col-md-12"
-                                       id="companyTableId">
+                                       id="countryListTableId">
                                     <thead>
                                     <tr>
-                                        <th class="text-muted">Country Name</th>
+
+                                        <th class="text-muted">SL No.</th>
+                                        <th class="text-muted">id</th>
+                                        <th class="text-muted">countryName</th>
+                                        <th class="text-muted">Action</th>
                                     </tr>
                                     <tbody>
                                     </tbody>
@@ -76,6 +80,12 @@
                                         <div class="card-body">
                                             <form id="countrySetupForm" action="<c:url value='/countrySetup'/>"
                                                   class="form-horizontal globalForm countrySetupForm">
+
+                                                <input type="hidden" name="id"
+                                                       id="countryId" class="form-control field"
+                                                       required="true">
+
+
                                                 <div class="form-group mb-3 row">
                                                     <label class="col-sm-2 col-form-label text-right required">Country
                                                         Name</label>
@@ -87,6 +97,7 @@
                                                     </div>
                                                 </div>
 
+
                                                 <div class="form-group row offset-2">
                                                     <div class="col-4">
                                                         <input type="submit"
@@ -95,6 +106,7 @@
                                                     </div>
                                                 </div>
                                             </form>
+
                                         </div>
                                     </div>
                                 </div>

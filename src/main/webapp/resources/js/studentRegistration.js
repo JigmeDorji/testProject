@@ -2,6 +2,9 @@
  * Created by nzepa on 10/11/2020.
  */
 
+/**
+ * Created by jigme.dorji on 24-Apr-2020.
+ */
 studentRegistration = (function () {
     "use strict";
     var form = $('#studentRegistrationForm');
@@ -126,18 +129,25 @@ studentRegistration = (function () {
         })
     }
 
+    function generateReport() {
+        $('#generateReportBtn').on('click', function () {
+            $.ajax({
+                url: _baseURL() + 'generateReport',
+                type: 'GET',
+                success: function (res) {
+                    window.open(ttplGlobal.baseReportLocation() + res.dto.reportName, '_blank');
+                }
+            });
+        })
+    }
+
 
     return {
-        save: save,
-        getStudentList: getStudentList,
-        deleteStudentInfo: deleteStudentInfo,
-        editStudentInfo: editStudentInfo
+        generateReport:generateReport
     }
 })();
 
 $(document).ready(function () {
-    studentRegistration.getStudentList();
-    studentRegistration.save();
-    studentRegistration.deleteStudentInfo();
-    studentRegistration.editStudentInfo();
+    studentRegistration.generateReport();
 });
+

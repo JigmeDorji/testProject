@@ -36,12 +36,15 @@
     <bean id="queryProps" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
         <property name="locations">
             <list>
+                <value>classpath*:sqlquery/ChiwogRegistrationDao.mssql.sql</value>
                 <value>classpath*:sqlquery/CompanyDao.mssql.sql</value>
                 <value>classpath*:sqlquery/UserDao.mssql.sql</value>
                 <value>classpath*:sqlquery/UserAccessPermissionDao.mssql.sql</value>
                 <value>classpath*:sqlquery/CommonDao.mssql.sql</value>
                 <value>classpath*:sqlquery/ApplicationDao.mssql.sql</value>
                 <value>classpath*:sqlquery/StudentRegistrationDao.mssql.sql</value>
+                <value>classpath*:sqlquery/CountrySetupDAO.mssql.sql</value>
+                <value>classpath*:sqlquery/EmployeeRegistrationDao.mssql.sql</value>
             </list>
         </property>
     </bean>

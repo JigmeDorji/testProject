@@ -5,8 +5,8 @@
 reviewApplication = (function () {
 
     "use strict";
-    let form = $('#reviewApplicationForm');
-    let isSubmitted = false;
+    var form = $('#reviewApplicationForm');
+    var isSubmitted = false;
 
     function _baseURL() {
         return 'reviewApplication/';
@@ -17,7 +17,7 @@ reviewApplication = (function () {
             url: _baseURL() + 'getApplicationList',
             type: 'GET',
             success: function (res) {
-                let columnDef = [
+                var columnDef = [
                     {
                         class: "align-middle", "mRender": function (data, type, row, meta) {
                             return meta.row + 1;
@@ -26,7 +26,7 @@ reviewApplication = (function () {
                     {
                         data: 'status', class: "align-middle",
                         render: function (data) {
-                            let status = null;
+                            var status = null;
                             if (data === 'S') {
                                 status = "<input type='hidden' id='status' class='status' value='" + data + "'/>" +
                                     "<i class='status-icon bg-yellow'></i>" + "Pending";
@@ -83,9 +83,9 @@ reviewApplication = (function () {
 
     function btnView() {
         $('#applicationListTableId tbody').on('click', 'tr #btnViewApplication', function () {
-            let row = $(this).closest('tr');
-            let selectedRow = row.addClass('companyId');
-            let applicationNo = selectedRow.find('.applicationNo').text();
+            var row = $(this).closest('tr');
+            var selectedRow = row.addClass('companyId');
+            var applicationNo = selectedRow.find('.applicationNo').text();
             $.ajax({
                 url: _baseURL() + 'getApplicationDetail',
                 type: 'GET',
@@ -110,13 +110,13 @@ reviewApplication = (function () {
             data: {applicationNo: applicationNo},
             success: function (res) {
                 if (res.status === 1) {
-                    let data = res.dto;
+                    var data = res.dto;
                     $('#documentTableId tbody').empty();
-                    for (let i = 0; i < data.length; i++) {
-                        let documentId = data[i].documentId;
-                        let documentUrl = data[i].documentUrl;
-                        let documentName = data[i].documentName;
-                        let row = '<tr>' +
+                    for (var i = 0; i < data.length; i++) {
+                        var documentId = data[i].documentId;
+                        var documentUrl = data[i].documentUrl;
+                        var documentName = data[i].documentName;
+                        var row = '<tr>' +
                             '<td>' + parseInt(i + 1) + '</td>' +
                             '<td><input type="hidden" class="documentId" value="' + documentId + '" /> ' +
                             '<input type="hidden" class="documentUrl" value="' + documentUrl + '" />' + documentName + '</td>' +
@@ -140,18 +140,18 @@ reviewApplication = (function () {
             data: {applicationNo: applicationNo},
             success: function (res) {
                 if (res.status === 1) {
-                    let data = res.dto;
+                    var data = res.dto;
                     $('#commentCount').text(data.length);
-                    let li = '';
-                    for (let i = 0; i < data.length; i++) {
-                        let comments = data[i].comments;
-                        let createdBy = data[i].createdBy;
-                        let commentedBy = data[i].commentedBy;
+                    var li = '';
+                    for (var i = 0; i < data.length; i++) {
+                        var comments = data[i].comments;
+                        var createdBy = data[i].createdBy;
+                        var commentedBy = data[i].commentedBy;
                         if (createdBy === $('#currentUserId').val()) {
                             commentedBy = 'You '
                         }
-                        let commentedByShortForm = data[i].commentedByShortForm;
-                        let commentedDate = data[i].commentedDate;
+                        var commentedByShortForm = data[i].commentedByShortForm;
+                        var commentedDate = data[i].commentedDate;
                         li = '<li>' +
                             '<div class="list-timeline-icon bg-twitter">' + commentedByShortForm + '</div>' +
                             '<div class="list-timeline-content">' +
@@ -171,10 +171,10 @@ reviewApplication = (function () {
 
     function downloadSubmittedDocument() {
         $('#documentTableId tbody').on('click', 'tr #btnDownload', function () {
-            let row = $(this).closest('tr');
-            let selectedRow = row.addClass('selected');
-            let documentId = selectedRow.find('.documentId').val();
-            let url = _baseURL() + 'downloadSubmittedDocument/' + documentId;
+            var row = $(this).closest('tr');
+            var selectedRow = row.addClass('selected');
+            var documentId = selectedRow.find('.documentId').val();
+            var url = _baseURL() + 'downloadSubmittedDocument/' + documentId;
             $.ajax({
                 url: url,
                 type: 'GET',
@@ -188,10 +188,10 @@ reviewApplication = (function () {
 
     function btnApprove() {
         $('#btnApprove').on('click', function () {
-            let applicationNo = $('#applicationNo').val();
-            let comments = $('#comments').val();
+            var applicationNo = $('#applicationNo').val();
+            var comments = $('#comments').val();
             $('#btnApprove').attr('disabled', true);
-            let url = _baseURL() + 'approveApplication';
+            var url = _baseURL() + 'approveApplication';
             $.ajax({
                 url: url,
                 type: 'POST',
@@ -214,8 +214,8 @@ reviewApplication = (function () {
     }
 
     function validateComments(comments) {
-        let returnValue = true;
-        let commentId = $('#comments');
+        var returnValue = true;
+        var commentId = $('#comments');
         if (comments === '' || comments == null) {
             commentId.attr('required', true);
             commentId.addClass('is-invalid');
@@ -226,7 +226,7 @@ reviewApplication = (function () {
 
     function onChangeComments() {
         $('#comments').on('keyup', function () {
-            let commentId = $('#comments');
+            var commentId = $('#comments');
             if ($(this).val() !== '') {
                 commentId.attr('required', false);
                 commentId.removeClass('is-invalid');
@@ -236,11 +236,11 @@ reviewApplication = (function () {
 
     function btnReject() {
         $('#btnReject').on('click', function () {
-            let applicationNo = $('#applicationNo').val();
-            let comments = $('#comments').val();
+            var applicationNo = $('#applicationNo').val();
+            var comments = $('#comments').val();
             if (validateComments(comments)) {
                 $('#btnReject').attr('disabled', true);
-                let url = _baseURL() + 'rejectApplication';
+                var url = _baseURL() + 'rejectApplication';
                 $.ajax({
                     url: url,
                     type: 'POST',
