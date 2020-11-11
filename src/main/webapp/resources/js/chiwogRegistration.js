@@ -146,13 +146,28 @@ chiwogRegistration = (function () {
         });
 
     }
+function generateReport() {
+        $('#btnGenerate').on('click',function () {
+
+            $.ajax({
+                url: 'chiwogRegistration/generateReport',
+                type: 'GET',
+                success: function (res) {
+                    window.open(ttplGlobal.baseReportLocation() + res.dto.reportName,'_blank');
+
+                }
+            });
+
+    })
+}
 
 
     return {
         save: save,
         getChiwogList: getChiwogList,
         deleteChiwog: deleteChiwog,
-        editChiwog: editChiwog
+        editChiwog: editChiwog,
+        generateReport: generateReport
     }
 })();
 
@@ -161,6 +176,8 @@ $(document).ready(function () {
     chiwogRegistration.getChiwogList()
     chiwogRegistration.deleteChiwog()
     chiwogRegistration.editChiwog()
+    chiwogRegistration.generateReport()
+
 
 });/**
  * Created by jigme.dorji on 11/8/2020.

@@ -37,6 +37,17 @@
                                     Add New
                                 </a>
                             </div>
+                             <div class="col-auto ml-auto d-print-none">
+                                <a href="#"
+                                   class="btn btn-primary btn-sm ml-3 d-none d-sm-inline-block"
+                                   id="btnGenerate">
+
+                                    Generate Report
+                                </a>
+                            </div>
+
+
+
                         </div>
                     </div>
                     <div class="card">
