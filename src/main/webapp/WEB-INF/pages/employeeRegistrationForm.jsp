@@ -37,7 +37,7 @@
                                 </a>
                             </div>
                             <div class="col-auto ml-auto d-print-none">
-                                <input type="button" id="generateReportBtn" value="Generate Report">
+                                <input type="button"  class="btn btn-outline-primary btn-sm ml-3 d-none d-sm-inline-block" id="generateReportBtn" value="Generate Report">
                             </div>
                         </div>
                     </div>

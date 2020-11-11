@@ -153,6 +153,18 @@ employeeRegistration = (function () {
         });
     }
 
+
+    var sumTotalOfId = 0;
+    function calculateSumTotal(){
+        $('#employeeListTableId tbody').find('tr').each(function(){
+            var SelectedRow = $(this).closest('tr');
+            sumTotalOfId += parseInt(SelectedRow.find('.employeeId').text());
+        });
+
+        $('#sumTotal').val(sumTotalOfId);
+
+    }
+
     function generateReport() {
         alert("here");
         $('#generateReportBtn').on('click', function () {
@@ -164,17 +176,6 @@ employeeRegistration = (function () {
                 }
             });
         })
-    }
-
-    var sumTotalOfId = 0;
-    function calculateSumTotal(){
-        $('#employeeListTableId tbody').find('tr').each(function(){
-            var SelectedRow = $(this).closest('tr');
-            sumTotalOfId += parseInt(SelectedRow.find('.employeeId').text());
-        });
-
-        $('#sumTotal').val(sumTotalOfId);
-
     }
 
     return {
@@ -194,6 +195,6 @@ $(document).ready(function () {
     employeeRegistration.deleteEmployee();
     employeeRegistration.EditEmployee();
     employeeRegistration.calculateSumTotal();
-    employeeRegistration.generateReporta();
+    employeeRegistration.generateReport();
 
 });

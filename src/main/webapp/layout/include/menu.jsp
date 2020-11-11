@@ -16,6 +16,17 @@
                             </span>
                 </a>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="<c:url value="/employeeRegistration"/>">
+                        <span class="nav-link-icon d-md-none d-lg-inline-block">
+
+                        </span>
+                    <span class="nav-link-title">
+                            Employee Registration
+                            </span>
+                </a>
+            </li>
         </div>
 
     </div>
