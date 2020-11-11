@@ -60,6 +60,11 @@ employeeRegistration = (function () {
                             return formatAsDate(data)
                         }
                     },
+                    {data: 'employeeDzongkhagId', class: "employeeDzongkhagId align-middle hidden"},
+                    {data: 'employeeGewogId', class: "employeeGewogId align-middle hidden"},
+
+                    {data: 'dzongkhagName', class: "dzongkhagName align-middle"},
+                    {data: 'geogName', class: "geogName align-middle"},
 
                     {
                         "data": "null",
@@ -128,6 +133,9 @@ employeeRegistration = (function () {
             var employeeContactNumber = row.find('.employeeContactNumber').text();
             var employeeDateOfBirth = row.find('.employeeDateOfBirth').text();
 
+            var employeeDzongkhagId = row.find('.employeeDzongkhagId').text();
+            var employeeGewogId = row.find('.employeeGewogId').text();
+
             $("#employeeId").val(employeeId);
             $("#employeeName").val(employeeName);
             $("#employeeDesignation").val(employeeDesignation);
@@ -135,11 +143,27 @@ employeeRegistration = (function () {
             $("#employeeContactNumber").val(employeeContactNumber);
             $("#employeeDateOfBirth").val(employeeDateOfBirth);
 
+            $("#employeeDzongkhagId").val(employeeDzongkhagId);
+            $("#employeeGewogId").val(employeeGewogId);
+
             $('#employeeModal').modal('show');
 
             $("#btnSave").val("Update");
 
         });
+    }
+
+    function generateReport() {
+        alert("here");
+        $('#generateReportBtn').on('click', function () {
+            $.ajax({
+                url: _baseURL() + 'generateReport',
+                type: 'GET',
+                success: function (res) {
+                    window.open(GlobalFun.baseReportLocation() + res.dto.reportName, '_blank');
+                }
+            });
+        })
     }
 
     var sumTotalOfId = 0;
@@ -159,6 +183,7 @@ employeeRegistration = (function () {
         deleteEmployee: deleteEmployee,
         EditEmployee: EditEmployee,
         calculateSumTotal: calculateSumTotal,
+        generateReport: generateReport,
     }
 
 })();
@@ -169,5 +194,6 @@ $(document).ready(function () {
     employeeRegistration.deleteEmployee();
     employeeRegistration.EditEmployee();
     employeeRegistration.calculateSumTotal();
+    employeeRegistration.generateReporta();
 
 });

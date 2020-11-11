@@ -29,6 +29,9 @@ public class EmployeeRegistrationServices {
             employeeRegistrationEntity.setEmp_Contact_No(employeeRegistrationDTO.getEmployeeContactNumber());
             employeeRegistrationEntity.setEmp_Dob(employeeRegistrationDTO.getEmployeeDateOfBirth());
 
+            employeeRegistrationEntity.setEmp_Dzongkhag_Id(employeeRegistrationDTO.getEmployeeDzongkhagId());
+            employeeRegistrationEntity.setEmp_Gewog_Id(employeeRegistrationDTO.getEmployeeGewogId());
+
             employeeRegistrationDao.update(employeeRegistrationEntity);
 
             responseMessage.setStatus(1);
@@ -41,6 +44,9 @@ public class EmployeeRegistrationServices {
             employeeRegistrationEntity.setEmp_Department(employeeRegistrationDTO.getEmployeeDepartment());
             employeeRegistrationEntity.setEmp_Contact_No(employeeRegistrationDTO.getEmployeeContactNumber());
             employeeRegistrationEntity.setEmp_Dob(employeeRegistrationDTO.getEmployeeDateOfBirth());
+
+            employeeRegistrationEntity.setEmp_Dzongkhag_Id(employeeRegistrationDTO.getEmployeeDzongkhagId());
+            employeeRegistrationEntity.setEmp_Gewog_Id(employeeRegistrationDTO.getEmployeeGewogId());
 
             employeeRegistrationDao.save(employeeRegistrationEntity);
             responseMessage.setStatus(1);

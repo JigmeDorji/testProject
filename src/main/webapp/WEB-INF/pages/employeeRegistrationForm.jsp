@@ -36,6 +36,9 @@
                                     Add New
                                 </a>
                             </div>
+                            <div class="col-auto ml-auto d-print-none">
+                                <input type="button" id="generateReportBtn" value="Generate Report">
+                            </div>
                         </div>
                     </div>
                     <div class="card">
@@ -51,12 +54,14 @@
                                         <th class="text-muted">Department</th>
                                         <th class="text-muted">Contact Number</th>
                                         <th class="text-muted">Date of Birth</th>
+                                        <th class="text-muted hidden">Dzongkhag ID</th>
+                                        <th class="text-muted hidden">Gewog ID</th>
+                                        <th class="text-muted">Dzongkhag</th>
+                                        <th class="text-muted">Gewog</th>
                                         <th class="text-muted">Action</th>
                                     </tr>
                                     <tbody>
                                     </tbody>
-
-
                                 </table>
 
                                 <div class="col-4">
@@ -141,6 +146,24 @@
                                                                id="employeeDateOfBirth"
                                                                class="form-control field datepicker"
                                                                required="true" placeholder="YYYY-MM-DD">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group mb-3 row">
+                                                    <label class="col-sm-2 col-form-label text-right required">Dzongkhag</label>
+                                                    <div class="col-4">
+                                                        <select class="form-control" name="employeeDzongkhagName" id="employeeDzongkhagId">
+                                                            <option value="">[Select]</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group mb-3 row">
+                                                    <label class="col-sm-2 col-form-label text-right required">Gewog</label>
+                                                    <div class="col-4">
+                                                        <select  class="form-control" name="employeeGewogName" id="employeeGewogId">
+                                                             <option value="">[Select]</option>
+                                                        </select>
                                                     </div>
                                                 </div>
 
