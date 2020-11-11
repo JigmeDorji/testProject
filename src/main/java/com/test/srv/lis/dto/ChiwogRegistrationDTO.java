@@ -4,15 +4,16 @@ package com.test.srv.lis.dto;
  * Created by jigme.dorji on 11/8/2020.
  */
 public class ChiwogRegistrationDTO {
+    private Integer id;
     private String chiwogName;
-    private String mobile;
+    private Integer mobile;
 
-    public String getMobile() {
-        return mobile;
+    public Integer getId() {
+        return id;
     }
 
-    public void setMobile(String mobile) {
-        this.mobile = mobile;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getChiwogName() {
@@ -21,5 +22,13 @@ public class ChiwogRegistrationDTO {
 
     public void setChiwogName(String chiwogName) {
         this.chiwogName = chiwogName;
+    }
+
+    public Integer getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(Integer mobile) {
+        this.mobile = mobile;
     }
 }

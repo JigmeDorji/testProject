@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Created by jigme.dorji on 11/8/2020.
@@ -37,7 +38,21 @@ public class ChiwogRegistrationController {
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public ResponseMessage addCompany(HttpServletRequest request, ChiwogRegistrationDTO chiwogRegistrationDTO) throws IOException {
         CurrentUser currentUser = (CurrentUser) request.getSession().getAttribute("currentUser");
-        return  chiwogRegistrationService.save(chiwogRegistrationDTO);
+        return chiwogRegistrationService.save(chiwogRegistrationDTO);
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/getChiwogList", method = RequestMethod.GET)
+    public List<ChiwogRegistrationDTO> getChiwogList() {
+        return chiwogRegistrationService.getChiwogList();
+
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/deleteChiwogInfoByChiwogId", method = RequestMethod.POST)
+    public ResponseMessage deleteChiwogInfoByChiwogId(Integer chiwogId) {
+        return chiwogRegistrationService.deleteChiwogInfoByChiwogId(chiwogId);
+
     }
 
 }

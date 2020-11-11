@@ -2,20 +2,21 @@
  * Created by nzepa on 10/11/2020.
  */
 
-studentRegistration = (function () {
+bankaccountRegistration = (function () {
     "use strict";
-    var form =$('#studentRegistrationForm');
+    var form = $('#bankaccountRegistrationForm');
+
     function _baseURL() {
-        return 'studentRegistration/';
+        return 'bankaccountRegistration/';
     }
 
-    function save() {
+    function savedd() {
         $('#btnSave').on('click', function () {
             $.validator.setDefaults({
                 submitHandler: function () {
                     $('#btnSave').attr('disabled', true);
                     //var data = $('#studentRegistrationForm').serializeArray();
-                    var data = new FormData($('.studentRegistrationForm')[0]);
+                    var data = new FormData($('.bankaccountRegistration')[0]);
                     var url = _baseURL() + 'save';
                     $.ajax({
                         url: url,
@@ -55,7 +56,8 @@ studentRegistration = (function () {
     }
 
     function save() {
-        $('.studentRegistrationForm').validate({
+
+        $('.bankaccountRegistrationForm').validate({
             submitHandler: function (form) {
                 //handleCheckboxBeforeSave(form);
                 var url = _baseURL() + 'save';
@@ -65,7 +67,14 @@ studentRegistration = (function () {
                     data: $(form).serializeArray(),
                     success: function (res) {
                         if (res.status == 1) {
+                            $('#bankaccountName').val('bankaccountName');
+                            $('#cidNo').val('cidNo');
+                            $('#mobileNo').val('mobileNo');
+                            $('#emailId').val('emailId');
+                            $('#dzongkhagId').val('dzongkhagId');
                             successMsg(res.text);
+                            getBankaccountList();
+                            $('#companyDetailModal').modal('hide');
                         }
                     }
                 });
@@ -73,25 +82,13 @@ studentRegistration = (function () {
         });
     }
 
-    function generateReport() {
-        $('#generateReportBtn').on('click', function () {
-            $.ajax({
-                url: _baseURL() + 'generateReport',
-                type: 'GET',
-                success: function (res) {
-                    window.open(ttplGlobal.baseReportLocation() + res.dto.reportName, '_blank');
-                }
-            });
-        })
-    }
-
     return {
         save: save,
-        generateReport:generateReport
     }
 })();
 
 $(document).ready(function () {
-    studentRegistration.save();
-    studentRegistration.generateReport();
-});
+    bankaccountRegistration.save();
+});/**
+ * Created by jigme.dorji on 11/8/2020.
+ */

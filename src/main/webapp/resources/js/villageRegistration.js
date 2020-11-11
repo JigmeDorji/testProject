@@ -2,15 +2,16 @@
  * Created by nzepa on 10/11/2020.
  */
 
-dzongkhagRegistration = (function () {
+villageRegistration = (function () {
     "use strict";
-    var form =$('#dzongkhagRegistrationForm');
+    var form =$('#villageRegistrationForm');
     function _baseURL() {
-        return 'dzongkhagRegistration/';
+        return 'villageRegistration/';
     }
 
+
     function save() {
-        $('.dzongkhagRegistrationForm').validate({
+        $('.villageRegistrationForm').validate({
             submitHandler: function (form) {
                 //handleCheckboxBeforeSave(form);
                 var url = _baseURL() + 'save';
@@ -19,7 +20,7 @@ dzongkhagRegistration = (function () {
                     type: 'POST',
                     data: $(form).serializeArray(),
                     success: function (res) {
-                        if (res.status == 1) {
+                        if (res.status === 1) {
                             successMsg(res.text);
                         }
                     }
@@ -34,8 +35,5 @@ dzongkhagRegistration = (function () {
 })();
 
 $(document).ready(function () {
-
-    dzongkhagRegistration.save();
-
-
+    villageRegistration.save();
 });
