@@ -23,7 +23,6 @@
                     <div class="page-header">
                         <div class="row align-items-center">
                             <div class="col-auto">
-
                                 <h3 class="text-dark">
                                     Employee List
                                 </h3>
@@ -56,7 +55,16 @@
                                     </tr>
                                     <tbody>
                                     </tbody>
+
+
                                 </table>
+
+                                <div class="col-4">
+                                    <input type="text" name="sumTotal"
+                                           id="sumTotal" class="form-control field">
+                                </div>
+
+
                             </div>
                         </div>
                     </div>
@@ -78,32 +86,26 @@
                                 <div class="modal-body">
                                     <div class="card">
                                         <div class="card-body">
-                                            <form id="employeeRegistrationForm" action="<c:url value='/employeeRegistration'/>"
+                                            <form id="employeeRegistrationForm"
+                                                  action="<c:url value='/employeeRegistration'/>"
                                                   class="form-horizontal globalForm employeeRegistrationForm">
 
-                                                <%--<div class="form-group mb-3 row">
-                                                    <label class="col-sm-2 col-form-label text-right required">Employee Id</label>
-                                                    <div class="col-4">
-                                                        <input type="text" name="employeeId"
-                                                               id="employeeId" class="form-control field"
-                                                               required="true">
-                                                    </div>
-                                                </div>--%>
-
-                                                    <input type="hidden" name="id"
-                                                           id="employeeId" class="form-control field">
+                                                <input type="hidden" name="id"
+                                                       id="employeeId" class="form-control field">
 
                                                 <div class="form-group mb-3 row">
-                                                    <label class="col-sm-2 col-form-label text-right required">Employee Name</label>
+                                                    <label class="col-sm-2 col-form-label text-right required">Employee
+                                                        Name</label>
                                                     <div class="col-4">
                                                         <input type="text" name="employeeName"
                                                                id="employeeName" class="form-control field"
-                                                               required="true">
+                                                               required="true" autocomplete="off">
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group mb-3 row">
-                                                    <label class="col-sm-2 col-form-label text-right required">Employee Designation</label>
+                                                    <label class="col-sm-2 col-form-label text-right required">Employee
+                                                        Designation</label>
                                                     <div class="col-4">
                                                         <input type="text" name="employeeDesignation"
                                                                id="employeeDesignation" class="form-control field"
@@ -112,7 +114,8 @@
                                                 </div>
 
                                                 <div class="form-group mb-3 row">
-                                                    <label class="col-sm-2 col-form-label text-right required">Employee Department</label>
+                                                    <label class="col-sm-2 col-form-label text-right required">Employee
+                                                        Department</label>
                                                     <div class="col-4">
                                                         <input type="text" name="employeeDepartment"
                                                                id="employeeDepartment" class="form-control field"
@@ -121,7 +124,8 @@
                                                 </div>
 
                                                 <div class="form-group mb-3 row">
-                                                    <label class="col-sm-2 col-form-label text-right required">Employee Contact No.</label>
+                                                    <label class="col-sm-2 col-form-label text-right required">Employee
+                                                        Contact No.</label>
                                                     <div class="col-4">
                                                         <input type="text" name="employeeContactNumber"
                                                                id="employeeContactNumber" class="form-control field"
@@ -130,15 +134,15 @@
                                                 </div>
 
                                                 <div class="form-group mb-3 row">
-                                                    <label class="col-sm-2 col-form-label text-right required">Date of Birth</label>
+                                                    <label class="col-sm-2 col-form-label text-right required">Date of
+                                                        Birth</label>
                                                     <div class="col-4">
                                                         <input type="text" name="employeeDateOfBirth"
-                                                               id="employeeDateOfBirth" class="form-control field datepicker"
+                                                               id="employeeDateOfBirth"
+                                                               class="form-control field datepicker"
                                                                required="true" placeholder="YYYY-MM-DD">
                                                     </div>
                                                 </div>
-
-
 
                                                 <div class="form-group row offset-2">
                                                     <div class="col-4">

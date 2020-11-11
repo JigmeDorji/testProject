@@ -19,7 +19,6 @@ public class EmployeeRegistrationDao extends BaseDao{
         em.persist(employeeRegistration);
     }
 
-
     @Transactional(readOnly = true)
     public List<EmployeeRegistrationDTO> getEmployeeList() {
         String query = properties.getProperty("EmployeeRegistrationDao.getEmployeeList");

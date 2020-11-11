@@ -60,6 +60,7 @@ employeeRegistration = (function () {
                             return formatAsDate(data)
                         }
                     },
+
                     {
                         "data": "null",
                         "mRender": function () {
@@ -76,6 +77,8 @@ employeeRegistration = (function () {
                     , bSort: false
                     , "auto-width": true
                 });
+
+               calculateSumTotal();
             }
         });
     }
@@ -139,11 +142,23 @@ employeeRegistration = (function () {
         });
     }
 
+    var sumTotalOfId = 0;
+    function calculateSumTotal(){
+        $('#employeeListTableId tbody').find('tr').each(function(){
+            var SelectedRow = $(this).closest('tr');
+            sumTotalOfId += parseInt(SelectedRow.find('.employeeId').text());
+        });
+
+        $('#sumTotal').val(sumTotalOfId);
+
+    }
+
     return {
         save: save,
         getEmployeeList: getEmployeeList,
         deleteEmployee: deleteEmployee,
-        EditEmployee: EditEmployee
+        EditEmployee: EditEmployee,
+        calculateSumTotal: calculateSumTotal,
     }
 
 })();
@@ -153,5 +168,6 @@ $(document).ready(function () {
     employeeRegistration.getEmployeeList();
     employeeRegistration.deleteEmployee();
     employeeRegistration.EditEmployee();
+    employeeRegistration.calculateSumTotal();
 
 });

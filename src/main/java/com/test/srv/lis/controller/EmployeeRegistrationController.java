@@ -36,7 +36,6 @@ public class EmployeeRegistrationController {
         return employeeRegistrationServices.save(employeeRegistrationDTO);
     }
 
-
     @ResponseBody
     @RequestMapping(value = "/getEmployeeList", method = RequestMethod.GET)
     public List<EmployeeRegistrationDTO> getEmployeeList() {

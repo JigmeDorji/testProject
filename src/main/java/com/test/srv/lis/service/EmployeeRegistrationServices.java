@@ -19,6 +19,7 @@ public class EmployeeRegistrationServices {
         EmployeeRegistrationEntity employeeRegistrationEntity = new EmployeeRegistrationEntity();
 
         ResponseMessage responseMessage = new ResponseMessage();
+
         if (employeeRegistrationDTO.getId() != null) {
             employeeRegistrationEntity.setId(employeeRegistrationDTO.getId());
 
