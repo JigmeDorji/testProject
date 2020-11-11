@@ -42,6 +42,7 @@
                 <value>classpath*:sqlquery/CommonDao.mssql.sql</value>
                 <value>classpath*:sqlquery/ApplicationDao.mssql.sql</value>
                 <value>classpath*:sqlquery/CountrySetupDAO.mssql.sql</value>
+                <value>classpath*:sqlquery/EmployeeRegistrationDao.mssql.sql</value>
             </list>
         </property>
     </bean>
