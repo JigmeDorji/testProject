@@ -251,7 +251,7 @@ function parseAsDate(val) {
     }
 }
 
-ttplGlobal = (function () {
+GlobalFun = (function () {
     "use strict";
 
     function baseUrl() {
