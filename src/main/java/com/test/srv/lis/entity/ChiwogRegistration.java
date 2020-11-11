@@ -17,6 +17,9 @@ public class ChiwogRegistration {
     @Column(name = "chiwogName")
     private String chiwogName;
 
+    @Column(name = "mobile")
+    private Integer mobile;
+
     public Integer getId() {
         return id;
     }
@@ -31,5 +34,13 @@ public class ChiwogRegistration {
 
     public void setChiwogName(String chiwogName) {
         this.chiwogName = chiwogName;
+    }
+
+    public Integer getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(Integer mobile) {
+        this.mobile = mobile;
     }
 }
