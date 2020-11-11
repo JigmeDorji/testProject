@@ -2,20 +2,20 @@
  * Created by nzepa on 10/11/2020.
  */
 
-studentRegistration = (function () {
+dzongkhagRegistration = (function () {
     "use strict";
-    var form =$('#studentRegistrationForm');
+    var form =$('#dzongkhagRegistrationForm');
     function _baseURL() {
-        return 'studentRegistration/';
+        return 'dzongkhagRegistration/';
     }
 
-    function save() {
+    function savedd() {
         $('#btnSave').on('click', function () {
             $.validator.setDefaults({
                 submitHandler: function () {
                     $('#btnSave').attr('disabled', true);
                     //var data = $('#studentRegistrationForm').serializeArray();
-                    var data = new FormData($('.studentRegistrationForm')[0]);
+                    var data = new FormData($('.dzongkhagRegistrationForm')[0]);
                     var url = _baseURL() + 'save';
                     $.ajax({
                         url: url,
@@ -55,7 +55,7 @@ studentRegistration = (function () {
     }
 
     function save() {
-        $('.studentRegistrationForm').validate({
+        $('.dzongkhagRegistrationForm').validate({
             submitHandler: function (form) {
                 //handleCheckboxBeforeSave(form);
                 var url = _baseURL() + 'save';
@@ -79,5 +79,8 @@ studentRegistration = (function () {
 })();
 
 $(document).ready(function () {
-    studentRegistration.save();
+
+    dzongkhagRegistration.save();
+
+
 });

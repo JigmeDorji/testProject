@@ -2,20 +2,20 @@
  * Created by nzepa on 10/11/2020.
  */
 
-studentRegistration = (function () {
+gewogRegistration = (function () {
     "use strict";
-    var form =$('#studentRegistrationForm');
+    var form =$('#gewogRegistrationForm');
     function _baseURL() {
-        return 'studentRegistration/';
+        return 'gewogRegistration/';
     }
 
-    function save() {
+    function savedd() {
         $('#btnSave').on('click', function () {
             $.validator.setDefaults({
                 submitHandler: function () {
                     $('#btnSave').attr('disabled', true);
-                    //var data = $('#studentRegistrationForm').serializeArray();
-                    var data = new FormData($('.studentRegistrationForm')[0]);
+                    //var data = $('#gewogRegistrationForm').serializeArray();
+                    var data = new FormData($('.gewogRegistrationForm')[0]);
                     var url = _baseURL() + 'save';
                     $.ajax({
                         url: url,
@@ -25,7 +25,7 @@ studentRegistration = (function () {
                         success: function (res) {
                             if (res.status == 1) {
                                 successMsg(res.text);
-                                $('#companyDetailModal').modal('hide');
+                                $('#gewogDetailModal').modal('hide');
                                 $('#btnSave').attr("disabled", false);
                             } else {
                                 $('#btnSave').attr("disabled", false);
@@ -55,7 +55,7 @@ studentRegistration = (function () {
     }
 
     function save() {
-        $('.studentRegistrationForm').validate({
+        $('.gewogRegistrationForm').validate({
             submitHandler: function (form) {
                 //handleCheckboxBeforeSave(form);
                 var url = _baseURL() + 'save';
@@ -79,5 +79,5 @@ studentRegistration = (function () {
 })();
 
 $(document).ready(function () {
-    studentRegistration.save();
+    gewogRegistration.save();
 });

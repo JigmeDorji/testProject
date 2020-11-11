@@ -2,14 +2,14 @@
  * Created by nzepa on 10/11/2020.
  */
 
-studentRegistration = (function () {
+chiwogRegistration = (function () {
     "use strict";
     var form =$('#studentRegistrationForm');
     function _baseURL() {
-        return 'studentRegistration/';
+        return 'chiwogRegistration/';
     }
 
-    function save() {
+    function savedd() {
         $('#btnSave').on('click', function () {
             $.validator.setDefaults({
                 submitHandler: function () {
@@ -55,7 +55,7 @@ studentRegistration = (function () {
     }
 
     function save() {
-        $('.studentRegistrationForm').validate({
+        $('.chiwogRegistrationForm').validate({
             submitHandler: function (form) {
                 //handleCheckboxBeforeSave(form);
                 var url = _baseURL() + 'save';
@@ -79,5 +79,8 @@ studentRegistration = (function () {
 })();
 
 $(document).ready(function () {
-    studentRegistration.save();
-});
+    alert('hi')
+    chiwogRegistration .save();
+});/**
+ * Created by jigme.dorji on 11/8/2020.
+ */

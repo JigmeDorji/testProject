@@ -6,6 +6,7 @@ import com.test.srv.helper.ResponseMessage;
 import com.test.srv.lis.dto.CompanyDTO;
 import com.test.srv.lis.dto.StudentRegDTO;
 import com.test.srv.lis.service.CompanyService;
+import com.test.srv.lis.service.StudentRegistrationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
@@ -17,17 +18,27 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
-
 @Controller
 @PreAuthorize("isAuthenticated()")
 @RequestMapping("/studentRegistration")
 public class StudentRegistrationController {
+
+    @Autowired
+    StudentRegistrationService studentRegistrationService;
+
+
     @Autowired
     private CompanyService companyService;
-
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String list(HttpServletRequest request, Model model) {
         return "studentRegistration";
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/save", method = RequestMethod.POST)
+    public ResponseMessage saveStudent(HttpServletRequest request, StudentRegDTO studentRegDTO) throws IOException {
+        CurrentUser currentUser = (CurrentUser) request.getSession().getAttribute("currentUser");
+        return studentRegistrationService.save(studentRegDTO);
     }
 
     @ResponseBody
@@ -42,10 +53,4 @@ public class StudentRegistrationController {
         return (CompanyDTO) companyService.getCompanyDetail(companyId).getDTO();
     }
 
-    @ResponseBody
-    @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public ResponseMessage addCompany(HttpServletRequest request, StudentRegDTO studentRegDTO) throws IOException {
-//        CurrentUser currentUser = (CurrentUser) request.getSession().getAttribute("currentUser");
-        return null;
-    }
 }

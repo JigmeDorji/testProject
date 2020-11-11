@@ -25,7 +25,7 @@
                             <div class="col-auto">
 
                                 <h3 class="text-dark">
-                                    Student List
+                                    Country List
                                 </h3>
                             </div>
                             <!-- Page title actions -->
@@ -33,16 +33,6 @@
                                 <a href="#" data-toggle="modal" data-target="#companyDetailModal"
                                    class="btn btn-primary btn-sm ml-3 d-none d-sm-inline-block"
                                    id="btnAddNew">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-md"
-                                         width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
-                                         stroke="currentColor" fill="none" stroke-linecap="round"
-                                         stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z"></path>
-                                        <circle cx="8.5" cy="7" r="4"></circle>
-                                        <path d="M2 21v-2a4 4 0 0 1 4 -4h5a4 4 0 0 1 4 4v2"></path>
-                                        <line x1="16" y1="11" x2="22" y2="11"></line>
-                                        <line x1="19" y1="8" x2="19" y2="14"></line>
-                                    </svg>
                                     Add New
                                 </a>
                             </div>
@@ -52,10 +42,14 @@
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table card-table text-nowrap table-bordered col-md-12"
-                                       id="companyTableId">
+                                       id="countryListTableId">
                                     <thead>
                                     <tr>
-                                        <th class="text-muted">Student Name</th>
+
+                                        <th class="text-muted">SL No.</th>
+                                        <th class="text-muted">id</th>
+                                        <th class="text-muted">countryName</th>
+                                        <th class="text-muted">Action</th>
                                     </tr>
                                     <tbody>
                                     </tbody>
@@ -69,66 +63,40 @@
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title newCompany">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-md"
-                                             width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
-                                             stroke="currentColor" fill="none" stroke-linecap="round"
-                                             stroke-linejoin="round">
-                                            <path stroke="none" d="M0 0h24v24H0z"></path>
-                                            <circle cx="8.5" cy="7" r="4"></circle>
-                                            <path d="M2 21v-2a4 4 0 0 1 4 -4h5a4 4 0 0 1 4 4v2"></path>
-                                            <line x1="16" y1="11" x2="22" y2="11"></line>
-                                            <line x1="19" y1="8" x2="19" y2="14"></line>
-                                        </svg>
-                                        Student Detail
+
+                                        Country Detail
                                     </h5>
                                     <h5 class="modal-title viewCompany hidden">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-md"
-                                             width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
-                                             stroke="currentColor" fill="none" stroke-linecap="round"
-                                             stroke-linejoin="round">
-                                            <path stroke="none" d="M0 0h24v24H0z"></path>
-                                            <circle cx="12" cy="7" r="4"></circle>
-                                            <path d="M5.5 21v-2a4 4 0 0 1 4 -4h5a4 4 0 0 1 4 4v2"></path>
-                                        </svg>
+
                                         Company
                                     </h5>
                                     <button type="button" class="close" data-dismiss="modal"
                                             aria-label="Close">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
-                                             height="24" viewBox="0 0 24 24"
-                                             stroke-width="2" stroke="currentColor" fill="none"
-                                             stroke-linecap="round" stroke-linejoin="round">
-                                            <path stroke="none" d="M0 0h24v24H0z"/>
-                                            <line x1="18" y1="6" x2="6" y2="18"/>
-                                            <line x1="6" y1="6" x2="18" y2="18"/>
-                                        </svg>
+
                                     </button>
                                 </div>
                                 <div class="modal-body">
                                     <div class="card">
                                         <div class="card-body">
-                                            <form id="studentRegistrationForm" action="<c:url value='/studentRegistration'/>"
-                                                  class="form-horizontal globalForm studentRegistrationForm">
+                                            <form id="countrySetupForm" action="<c:url value='/countrySetup'/>"
+                                                  class="form-horizontal globalForm countrySetupForm">
+
+                                                <input type="hidden" name="id"
+                                                       id="countryId" class="form-control field"
+                                                       required="true">
+
+
                                                 <div class="form-group mb-3 row">
-                                                    <label class="col-sm-2 col-form-label text-right required">Student
+                                                    <label class="col-sm-2 col-form-label text-right required">Country
                                                         Name</label>
 
                                                     <div class="col-4">
-                                                        <input type="text" name="studentName"
-                                                               id="studentName" class="form-control field"
+                                                        <input type="text" name="countryName"
+                                                               id="countryName" class="form-control field"
                                                                required="true">
                                                     </div>
                                                 </div>
-                                                <div class="form-group mb-3 row">
-                                                    <label class="col-sm-2 col-form-label text-right required">Student
-                                                        Age</label>
 
-                                                    <div class="col-4">
-                                                        <input type="text" name="studentAge"
-                                                               id="studentAge" class="form-control field"
-                                                               required="true">
-                                                    </div>
-                                                </div>
 
                                                 <div class="form-group row offset-2">
                                                     <div class="col-4">
@@ -138,6 +106,7 @@
                                                     </div>
                                                 </div>
                                             </form>
+
                                         </div>
                                     </div>
                                 </div>
