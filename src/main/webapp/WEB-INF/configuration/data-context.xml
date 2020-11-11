@@ -41,6 +41,7 @@
                 <value>classpath*:sqlquery/UserAccessPermissionDao.mssql.sql</value>
                 <value>classpath*:sqlquery/CommonDao.mssql.sql</value>
                 <value>classpath*:sqlquery/ApplicationDao.mssql.sql</value>
+                <value>classpath*:sqlquery/StudentRegistrationDao.mssql.sql</value>
             </list>
         </property>
     </bean>

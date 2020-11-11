@@ -48,14 +48,18 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="card">
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table card-table text-nowrap table-bordered col-md-12"
-                                       id="companyTableId">
+                                       id="studentTableGrid">
                                     <thead>
                                     <tr>
+                                        <th class="text-muted">Sl No.</th>
+                                        <th class="text-muted">Student Id</th>
                                         <th class="text-muted">Student Name</th>
+                                        <th class="text-muted">Action</th>
                                     </tr>
                                     <tbody>
                                     </tbody>
@@ -63,6 +67,12 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-4">
+                        <input type="text" name="sumTotal"
+                               id="sumTotal" class="form-control field"
+                               required="true">
+                    </div>
+
                     <div class="modal modal-blur fade" id="companyDetailModal" tabindex="-1"
                          role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false">
                         <div class="modal-dialog modal-xl" role="document">
@@ -107,8 +117,12 @@
                                 <div class="modal-body">
                                     <div class="card">
                                         <div class="card-body">
-                                            <form id="studentRegistrationForm" action="<c:url value='/studentRegistration'/>"
+                                            <form id="studentRegistrationForm"
+                                                  action="<c:url value='/studentRegistration'/>"
                                                   class="form-horizontal globalForm studentRegistrationForm">
+                                                <input type="hidden" name="studentId"
+                                                       id="studentId" class="form-control field"
+                                                       required="true">
                                                 <div class="form-group mb-3 row">
                                                     <label class="col-sm-2 col-form-label text-right required">Student
                                                         Name</label>
@@ -119,6 +133,7 @@
                                                                required="true">
                                                     </div>
                                                 </div>
+
 
                                                 <div class="form-group row offset-2">
                                                     <div class="col-4">
