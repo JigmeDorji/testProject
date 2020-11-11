@@ -73,11 +73,25 @@ studentRegistration = (function () {
         });
     }
 
+    function generateReport() {
+        $('#generateReportBtn').on('click', function () {
+            $.ajax({
+                url: _baseURL() + 'generateReport',
+                type: 'GET',
+                success: function (res) {
+                    window.open(ttplGlobal.baseReportLocation() + res.dto.reportName, '_blank');
+                }
+            });
+        })
+    }
+
     return {
-        save: save
+        save: save,
+        generateReport:generateReport
     }
 })();
 
 $(document).ready(function () {
     studentRegistration.save();
+    studentRegistration.generateReport();
 });

@@ -23,7 +23,6 @@
                     <div class="page-header">
                         <div class="row align-items-center">
                             <div class="col-auto">
-
                                 <h3 class="text-dark">
                                     Student List
                                 </h3>
@@ -33,17 +32,12 @@
                                 <a href="#" data-toggle="modal" data-target="#companyDetailModal"
                                    class="btn btn-primary btn-sm ml-3 d-none d-sm-inline-block"
                                    id="btnAddNew">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-md"
-                                         width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
-                                         stroke="currentColor" fill="none" stroke-linecap="round"
-                                         stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z"></path>
-                                        <circle cx="8.5" cy="7" r="4"></circle>
-                                        <path d="M2 21v-2a4 4 0 0 1 4 -4h5a4 4 0 0 1 4 4v2"></path>
-                                        <line x1="16" y1="11" x2="22" y2="11"></line>
-                                        <line x1="19" y1="8" x2="19" y2="14"></line>
-                                    </svg>
                                     Add New
+                                </a>
+                                <a href="#" data-toggle="modal" data-target="#companyDetailModal"
+                                   class="btn btn-primary btn-sm ml-3 d-none d-sm-inline-block"
+                                   id="generateReportBtn">
+                                    Generate Report
                                 </a>
                             </div>
                         </div>
@@ -127,6 +121,8 @@
                                                                value="Save">
                                                     </div>
                                                 </div>
+
+
                                             </form>
                                         </div>
                                     </div>
