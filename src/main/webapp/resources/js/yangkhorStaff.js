@@ -2,18 +2,18 @@
  * Created by nzepa on 10/11/2020.
  */
 
-dzongkhagRegistration = (function () {
+yangkhorStaff = (function () {
     "use strict";
-    var form =$('#dzongkhagRegistrationForm');
+    var form =$('#yankhorStaffForm');
     function _baseURL() {
-        return 'dzongkhagRegistration/';
+        return 'yangkhorStaff/';
     }
 
     function save() {
-        $('.dzongkhagRegistrationForm').validate({
+        $('.yankhorStaffForm').validate({
             submitHandler: function (form) {
                 //handleCheckboxBeforeSave(form);
-                var url = _baseURL() + 'save';
+                var url = _baseURL() + 'yangkhorSaveDetail';
                 $.ajax({
                     url: url,
                     type: 'POST',
@@ -34,8 +34,6 @@ dzongkhagRegistration = (function () {
 })();
 
 $(document).ready(function () {
-
-    dzongkhagRegistration.save();
-
-
+    alert('loading...');
+    yankhorStaff.save();
 });

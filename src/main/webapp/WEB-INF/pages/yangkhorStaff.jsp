@@ -11,7 +11,7 @@
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <head>
-    <title>Student Registration</title>
+    <title>Yangkhot Staff</title>
 </head>
 <body>
 <%--<script src="<c:url value="/resources/js/studentRegistration.js"/>"></script>--%>
@@ -25,7 +25,7 @@
                             <div class="col-auto">
 
                                 <h3 class="text-dark">
-                                    Country List
+                                    Staff List
                                 </h3>
                             </div>
                             <!-- Page title actions -->
@@ -42,14 +42,10 @@
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table card-table text-nowrap table-bordered col-md-12"
-                                       id="countryListTableId">
+                                       id="companyTableId">
                                     <thead>
                                     <tr>
-
-                                        <th class="text-muted">SL No.</th>
-                                        <th class="text-muted">id</th>
-                                        <th class="text-muted">countryName</th>
-                                        <th class="text-muted">Action</th>
+                                        <th class="text-muted">Staff Detail: </th>
                                     </tr>
                                     <tbody>
                                     </tbody>
@@ -64,7 +60,8 @@
                                 <div class="modal-header">
                                     <h5 class="modal-title newCompany">
 
-                                        Country Detail
+
+                                        Staff Detail
                                     </h5>
                                     <h5 class="modal-title viewCompany hidden">
 
@@ -78,25 +75,28 @@
                                 <div class="modal-body">
                                     <div class="card">
                                         <div class="card-body">
-                                            <form id="countrySetupForm" action="<c:url value='/countrySetup'/>"
-                                                  class="form-horizontal globalForm countrySetupForm">
-
-                                                <input type="hidden" name="id"
-                                                       id="countryId" class="form-control field"
-                                                       required="true">
-
-
+                                            <form id="yangkhorStaffForm" action="<c:url value='/yangkhorStaff'/>"
+                                                  class="form-horizontal globalForm yangkhorStaffForm">
                                                 <div class="form-group mb-3 row">
-                                                    <label class="col-sm-2 col-form-label text-right required">Country
+                                                    <label class="col-sm-2 col-form-label text-right required">Staff
                                                         Name</label>
 
-                                                    <div class="col-4">
-                                                        <input type="text" name="countryName"
-                                                               id="countryName" class="form-control field"
-                                                               required="true">
-                                                    </div>
-                                                </div>
 
+                                                    <div class="col-4">
+                                                        <input type="text" name="yankhorStaff"
+                                                               id="yankhorStaff" class="form-control field"
+                                                               required="true">
+                                                        <label class="col-sm-2 col-form-label text-right required">Staff
+                                                            Number</label>
+
+
+                                                        <div class="col-4">
+                                                            <input type="text" name="yankhorStaff"
+                                                                   id="yankhorStaff" class="form-control field"
+                                                                   required="true">
+                                                    </div>
+
+                                                </div>
 
                                                 <div class="form-group row offset-2">
                                                     <div class="col-4">
@@ -106,7 +106,6 @@
                                                     </div>
                                                 </div>
                                             </form>
-
                                         </div>
                                     </div>
                                 </div>

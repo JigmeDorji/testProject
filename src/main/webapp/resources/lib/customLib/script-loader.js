@@ -21,6 +21,9 @@
     if (document.URL.search("dzongkhagRegistration") > 1)
         scriptLoader("resources/js/dzongkhagRegistration.js");
 
+    if (document.URL.search("employeeRegistration") > 1)
+        scriptLoader("resources/js/employeeRegistration.js");
+
 
 });
 

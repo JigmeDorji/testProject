@@ -14,6 +14,7 @@ public class GewogRegistrationService {
     GewogRegistrationDao gewogRegistrationDao;
 
     public ResponseMessage save(GewogRegistrationDTO gewogRegistrationDTO) {
+
         GewogRegistration gewogRegistration = new GewogRegistration();
         gewogRegistration.setGewogName(gewogRegistrationDTO.getGewogName());
 
