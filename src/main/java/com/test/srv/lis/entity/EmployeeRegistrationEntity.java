@@ -27,6 +27,14 @@ public class EmployeeRegistrationEntity {
     @Column(name = "emp_Dob")
     private Date emp_Dob;
 
+
+    @Column(name = "emp_Dzongkhag_Id")
+    private Integer emp_Dzongkhag_Id;
+
+
+    @Column(name = "emp_Gewog_Id")
+    private Integer emp_Gewog_Id;
+
     public Integer getId() {
         return id;
     }
@@ -73,5 +81,21 @@ public class EmployeeRegistrationEntity {
 
     public void setEmp_Dob(Date emp_Dob) {
         this.emp_Dob = emp_Dob;
+    }
+
+    public Integer getEmp_Dzongkhag_Id() {
+        return emp_Dzongkhag_Id;
+    }
+
+    public void setEmp_Dzongkhag_Id(Integer emp_Dzongkhag_Id) {
+        this.emp_Dzongkhag_Id = emp_Dzongkhag_Id;
+    }
+
+    public Integer getEmp_Gewog_Id() {
+        return emp_Gewog_Id;
+    }
+
+    public void setEmp_Gewog_Id(Integer emp_Gewog_Id) {
+        this.emp_Gewog_Id = emp_Gewog_Id;
     }
 }

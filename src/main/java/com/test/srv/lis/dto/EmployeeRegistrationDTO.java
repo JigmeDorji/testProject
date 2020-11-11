@@ -12,6 +12,28 @@ public class EmployeeRegistrationDTO {
     private String employeeContactNumber;
     private Date employeeDateOfBirth;
 
+    private Integer employeeDzongkhagId;
+    private Integer employeeGewogId;
+
+    private String geogName;
+    private String dzongkhagName;
+
+    public String getDzongkhagName() {
+        return dzongkhagName;
+    }
+
+    public void setDzongkhagName(String dzongkhagName) {
+        this.dzongkhagName = dzongkhagName;
+    }
+
+    public String getGeogName() {
+        return geogName;
+    }
+
+    public void setGeogName(String geogName) {
+        this.geogName = geogName;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -58,6 +80,22 @@ public class EmployeeRegistrationDTO {
 
     public void setEmployeeDateOfBirth(Date employeeDateOfBirth) {
         this.employeeDateOfBirth = employeeDateOfBirth;
+    }
+
+    public Integer getEmployeeDzongkhagId() {
+        return employeeDzongkhagId;
+    }
+
+    public void setEmployeeDzongkhagId(Integer employeeDzongkhagId) {
+        this.employeeDzongkhagId = employeeDzongkhagId;
+    }
+
+    public Integer getEmployeeGewogId() {
+        return employeeGewogId;
+    }
+
+    public void setEmployeeGewogId(Integer employeeGewogId) {
+        this.employeeGewogId = employeeGewogId;
     }
 }
 
