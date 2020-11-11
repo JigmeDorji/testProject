@@ -6,16 +6,7 @@
 <div class="navbar-expand-md">
     <div class="collapse navbar-collapse" id="navbar-menu">
         <div class="navbar navbar-light">
-            <li class="nav-item">
-                <a class="nav-link" href="<c:url value="/studentRegistration"/>">
-                        <span class="nav-link-icon d-md-none d-lg-inline-block">
 
-                        </span>
-                        <span class="nav-link-title">
-                            Student Registration
-                            </span>
-                </a>
-            </li>
             <li class="nav-item">
                 <a class="nav-link" href="<c:url value="/customerSetup"/>">
                     <span class="nav-link-icon d-md-none d-lg-inline-block">

@@ -87,7 +87,7 @@ public class StudentRegistrationService extends BaseService {
         reportPath = reportPath.replace("\\", "/");
 
         String reportJRXML  = "/compact.documents/StudentList.jrxml";
-        String reportName = "studentListReport";
+        String reportName = "cutomerList";
 
         headerName = ReportService.portraitHeaderName;
         footerName = ReportService.portraitFooterName;
