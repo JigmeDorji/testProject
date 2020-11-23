@@ -9,6 +9,7 @@
     <groupId>com.springapp</groupId>
     <modelVersion>4.0.0</modelVersion>
 
+
     <properties>
         <spring.version>5.2.6.RELEASE</spring.version>
         <security.version>5.2.2.RELEASE</security.version>

@@ -1,8 +1,8 @@
 package com.test.srv.auth.controller;
 
+import com.test.srv.auth.dto.ChangePasswordDTO;
 import com.test.srv.auth.service.ChangePasswordService;
 import com.test.srv.helper.CurrentUser;
-import com.test.srv.auth.dto.ChangePasswordDTO;
 import com.test.srv.helper.ResponseMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;

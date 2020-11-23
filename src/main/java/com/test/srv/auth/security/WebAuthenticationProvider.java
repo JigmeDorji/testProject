@@ -1,11 +1,11 @@
 package com.test.srv.auth.security;
 
 import com.test.srv.auth.dto.UserAccessPermissionListDTO;
+import com.test.srv.auth.dto.UserDTO;
+import com.test.srv.auth.service.UserAccessPermissionService;
 import com.test.srv.auth.service.UserLoginService;
 import com.test.srv.enumeration.LoginErrorCode;
 import com.test.srv.enumeration.Permission;
-import com.test.srv.auth.dto.UserDTO;
-import com.test.srv.auth.service.UserAccessPermissionService;
 import com.test.srv.enumeration.UserRoleType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;

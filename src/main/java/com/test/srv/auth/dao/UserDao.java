@@ -1,9 +1,10 @@
+
 package com.test.srv.auth.dao;
 
-import com.test.srv.auth.entity.User_a;
-import com.test.srv.helper.BaseDao;
 import com.test.srv.auth.dto.UserDTO;
 import com.test.srv.auth.entity.User;
+import com.test.srv.auth.entity.User_a;
+import com.test.srv.helper.BaseDao;
 import org.hibernate.query.NativeQuery;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;

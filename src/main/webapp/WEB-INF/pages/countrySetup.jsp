@@ -36,6 +36,20 @@
                                     Add New
                                 </a>
                             </div>
+                            <div class="col-4">
+                                <input type="text" name="countrySetupId"
+                                       id="countrySetupId" class="form-control field "
+                                       required="true">
+
+                            </div>
+                            <div class="col-4">
+                                <input type="text" name="countrySetupName"
+                                       id="countrySetupName" class="form-control field "
+                                       required="true">
+
+                            </div>
+
+
                             <div class="col-auto ml-auto d-print-none">
                                 <a href="#"
                                    class="btn btn-primary btn-sm ml-3 d-none d-sm-inline-block"
@@ -52,7 +66,6 @@
                                        id="countryListTableId">
                                     <thead>
                                     <tr>
-
                                         <th class="text-muted">SL No.</th>
                                         <th class="text-muted">id</th>
                                         <th class="text-muted">countryName</th>
@@ -79,7 +92,9 @@
                                     </h5>
                                     <button type="button" class="close" data-dismiss="modal"
                                             aria-label="Close">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
+                                             viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                             stroke-linecap="round" stroke-linejoin="round">
                                             <path stroke="none" d="M0 0h24v24H0z"></path>
                                             <line x1="18" y1="6" x2="6" y2="18"></line>
                                             <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -122,6 +137,7 @@
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>

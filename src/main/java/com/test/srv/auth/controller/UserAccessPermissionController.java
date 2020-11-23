@@ -1,9 +1,9 @@
 package com.test.srv.auth.controller;
 
-import com.test.srv.auth.service.UserAccessPermissionService;
-import com.test.srv.helper.CurrentUser;
 import com.test.srv.auth.dto.UserAccessPermissionDTO;
 import com.test.srv.auth.dto.UserAccessPermissionListDTO;
+import com.test.srv.auth.service.UserAccessPermissionService;
+import com.test.srv.helper.CurrentUser;
 import com.test.srv.helper.ResponseMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;

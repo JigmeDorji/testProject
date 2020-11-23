@@ -4,8 +4,8 @@
 package com.test.srv.auth.service;
 
 import com.test.srv.auth.dao.ChangePasswordDao;
-import com.test.srv.helper.ResponseMessage;
 import com.test.srv.auth.dto.ChangePasswordDTO;
+import com.test.srv.helper.ResponseMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;

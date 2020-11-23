@@ -24,6 +24,7 @@
     <meta name="MobileOptimized" content="320"/>
     <meta name="robots" content="noindex,nofollow,noarchive"/>
     <jsp:include page="include/css.jsp"/>
+
     <style>
         body {
             display: none;

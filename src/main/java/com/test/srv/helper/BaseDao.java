@@ -1,4 +1,5 @@
 package com.test.srv.helper;
+import com.test.srv.lis.entity.ItemGroup;
 import org.hibernate.Session;
 import org.hibernate.transform.Transformers;
 import org.springframework.transaction.annotation.Transactional;
@@ -71,6 +72,7 @@ public abstract class BaseDao {
     protected Query persistenceQuery(String query) {
         return em.createNativeQuery(query);
     }
+
 }
 
 

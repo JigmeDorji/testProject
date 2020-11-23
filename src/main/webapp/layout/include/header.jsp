@@ -1,4 +1,3 @@
-<%@ page import="java.util.ResourceBundle" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="f" %>
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
@@ -9,13 +8,13 @@
     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 </form>
 
-<header class="navbar navbar-expand-md navbar-light">
+<header class="navbar navbar-expand-md navbar-light navbar fixed-top">
     <div class="container-xl">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu">
             <span class="navbar-toggler-icon"></span>
         </button>
         <a href="." class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pr-0 pr-md-3">
-            <img src="<c:url value='/resources/images/' />" alt="Test Project" class="navbar-brand-image">
+            <img src="<c:url value='/resources/images/' />" alt="Inventory" class="navbar-brand-image">
 
             <%--<h3 class="organization-name mt-4 ml-3 text-nowrap">Test Project</h3>--%>
         </a>
@@ -70,13 +69,7 @@
 
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="javascript:$('#logoutForm').submit();">
-                        <%--  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-md" width="24" height="24"
-                          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                          stroke-linecap="round" stroke-linejoin="round">
-                          <path stroke="none" d="M0 0h24v24H0z"></path>
-                          <path d="M7 6a7.75 7.75 0 1 0 10 0"></path>
-                          <line x1="12" y1="4" x2="12" y2="12"></line>
-                          </svg>--%>
+
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-md" width="24" height="24"
                              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
                              stroke-linecap="round" stroke-linejoin="round">
